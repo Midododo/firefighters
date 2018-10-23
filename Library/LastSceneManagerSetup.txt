@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Midori/Scenes/test.unity
+- path: Assets/Mukai/test.unity
   isLoaded: 1
   isActive: 1
