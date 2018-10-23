@@ -286,6 +286,18 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UMotionApplication">
+      <HintPath>Assets/Editor Default Resources/UMotionEditor/Plugins/Application/UMotionApplication.dll</HintPath>
+    </Reference>
+    <Reference Include="UMotionEditor">
+      <HintPath>Assets/Editor Default Resources/UMotionEditor/Plugins/Editor/UMotionEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets">
+      <HintPath>Assets/Midori/Effect/JMO Assets/Editor/JMOAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
+      <HintPath>Assets/Midori/Effect/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Midorikawa Ryo/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -380,6 +392,39 @@
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Editor\TMPro_TexturePostProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Plugins\MacOS\Editor\x64\AutodeskFbxSdkLicense.txt" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Plugins\MacOS\Editor\x64\UnityFbxSdkNativeLicense.txt" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Plugins\Windows\Editor\x64\AutodeskFbxSdkLicense.txt" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Plugins\Windows\Editor\x64\UnityFbxSdkNativeLicense.txt" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\CameraLit.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\ColorUnlit.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\ColorUnlitTransparent.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\UnlitDashedLine.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\UnlitLine.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\VertexColorUnlit.shader" />
+    <None Include="Assets\Editor Default Resources\UMotionEditor\Shaders\WiresOnly.shader" />
+    <None Include="Assets\Midori\Effect\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\Midori\Effect\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+    <None Include="Assets\Midori\Effect\JMO Assets\Cartoon FX\CartoonFX Free.txt" />
+    <None Include="Assets\Midori\Effect\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+    <None Include="Assets\Midori\Effect\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\Midori\Effect\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\Midori\Effect\PyroParticles\Readme.txt" />
+    <None Include="Assets\Midori\model\SimplePhysicalShader\SimplePhysicalShader.shader" />
+    <None Include="Assets\Midori\model\SimplePhysicalShader\SimplePhysicalShaderCoat.shader" />
+    <None Include="Assets\Midori\model\SimplePhysicalShader\SimplePhysicalShaderRetro.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+    <None Include="Assets\Midori\model\UnityChan\Stage\Shader\AlphaMask.shader" />
+    <None Include="Assets\Midori\model\UnityChan\license.txt" />
     <None Include="Assets\Resources\Shaders\Sprites-Brightness.shader" />
     <None Include="Assets\read me.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

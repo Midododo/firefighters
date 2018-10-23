@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Midorikawa Ryo/Game.unity
+- path: Assets/Midori/Scenes/test.unity
   isLoaded: 1
   isActive: 1
