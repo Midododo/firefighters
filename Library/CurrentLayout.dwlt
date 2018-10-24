@@ -83,9 +83,17 @@ MonoBehaviour:
     x: 0
     y: 761
     width: 1536
+<<<<<<< HEAD
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+=======
+    height: 731
+  m_MinSize: {x: 911, y: 442}
+  m_MaxSize: {x: 22006, y: 10021}
+  vertical: 0
+  controlID: 85
+>>>>>>> remotes/origin/Mukai2
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +143,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 394
+=======
+  controlID: 86
+>>>>>>> remotes/origin/Mukai2
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,9 +216,15 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 731
+<<<<<<< HEAD
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 13}
+>>>>>>> remotes/origin/Mukai2
   m_Panes:
   - {fileID: 16}
   m_Selected: 0
@@ -251,11 +269,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 360
     height: 487
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 17}
+=======
+    width: 687
+    height: 375
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+>>>>>>> remotes/origin/Mukai2
   m_Panes:
   - {fileID: 17}
   m_Selected: 0
@@ -275,12 +301,21 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 487
     width: 360
     height: 244
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
+=======
+    y: 375
+    width: 687
+    height: 356
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 15}
+>>>>>>> remotes/origin/Mukai2
   m_Panes:
   - {fileID: 18}
   m_Selected: 0
@@ -568,10 +603,17 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 111}
     m_SelectedIDs: 34150000
     m_LastClickedID: 5428
     m_ExpandedIDs: 00000000420a0000960a0000380c0000a80c0000600d0000060e0000121100005211000084110000a4120000f21200002e1300005a13000008160000c61600006e1800009c180000c6180000fe190000d83c0000da3c0000dc3c0000de3c0000e03c0000e23c0000e43c0000e63c0000e83c000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 6a3a0000
+    m_LastClickedID: 14954
+    m_ExpandedIDs: 00000000d42a0000282b0000c82c0000382d0000f02d0000962e00009e310000de310000103200007e330000e633000052370000fa38000028390000523900006a3a00008a3a00007e3b0000803b0000823b0000843b0000863b0000883b00008a3b00008c3b00008e3b0000a43b000000ca9a3b
+>>>>>>> remotes/origin/Mukai2
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -587,7 +629,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -599,7 +641,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000420a0000960a0000380c0000a80c0000600d0000060e0000121100005211000084110000a4120000f21200002e1300005a13000008160000c61600006e1800009c180000c6180000fe190000d83c0000da3c0000dc3c0000de3c0000e03c0000e23c0000e43c0000e63c0000e83c000000ca9a3b
+=======
+    m_ExpandedIDs: 00000000d42a0000282b0000c82c0000382d0000f02d0000962e00009e310000de310000103200007e330000e633000052370000fa38000028390000523900008a3a00007e3b0000803b0000823b0000843b0000863b0000883b00008a3b00008c3b00008e3b0000
+>>>>>>> remotes/origin/Mukai2
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,7 +689,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
+=======
+      m_ClientGUIView: {fileID: 8}
+>>>>>>> remotes/origin/Mukai2
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -704,6 +754,7 @@ MonoBehaviour:
     width: 341
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
+<<<<<<< HEAD
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_LockTracker:
@@ -713,3 +764,59 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+=======
+  m_SceneLighting: 1
+  lastFramingTime: 0
+  m_2DMode: 0
+  m_isRotationLocked: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_SceneViewState:
+    showFog: 1
+    showMaterialUpdate: 0
+    showSkybox: 1
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+  grid:
+    xGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+    yGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
+  m_Rotation:
+    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    speed: 2
+    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_Size:
+    m_Target: 8.354464
+    speed: 2
+    m_Value: 8.354464
+  m_Ortho:
+    m_Target: 0
+    speed: 2
+    m_Value: 0
+  m_ShowGlobalGrid: 1
+  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+>>>>>>> remotes/origin/Mukai2
