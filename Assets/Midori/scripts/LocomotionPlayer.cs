@@ -17,6 +17,8 @@ public class LocomotionPlayer : MonoBehaviour {
     private float speed = 0;
     private float direction = 0;
     private Locomotion locomotion = null;
+    GameObject player;
+    public int player_num = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -28,9 +30,17 @@ public class LocomotionPlayer : MonoBehaviour {
 	void Update () 
 	{
         if (animator && Camera.main)
-		{
-            JoystickToEvents.Do(transform,Camera.main.transform, ref speed, ref direction);
+        {
+            if (transform.tag == "Player1")
+            {
+                player_num = 1;
+            }
+            else if (transform.tag == "Player2")
+            {
+                player_num = 2;
+            }
+            JoystickToEvents.Do(transform, Camera.main.transform, ref speed, ref direction, player_num);
             locomotion.Do(speed * 6, direction * 180);
-		}		
+        }	
 	}
 }

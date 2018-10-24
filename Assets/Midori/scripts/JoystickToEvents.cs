@@ -1,14 +1,26 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class JoystickToEvents : MonoBehaviour 
 {
-    public static void Do(Transform root, Transform camera, ref float speed, ref float direction)
+    public static void Do(Transform root, Transform camera, ref float speed, ref float direction, int player_num)
     {
         Vector3 rootDirection = root.forward;
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-				
+        float horizontal = 0.0f;
+        float vertical = 0.0f;
+
+        if (player_num == 1)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        }
+        else if (player_num == 2)
+        {
+            horizontal = Input.GetAxis("Horizontal2");
+            vertical = Input.GetAxis("Vertical2");
+        }
+
         Vector3 stickDirection = new Vector3(horizontal, 0, vertical);
 
         // Get camera rotation.    
