@@ -1,10 +1,14 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Midori/Mixamo/Melee Axe Pack/Demo/Demo.unity
   isLoaded: 0
   isActive: 0
 =======
 - path: Assets/Mukai/Scenes/TitleM.unity
+=======
+- path: Assets/Scenes/Game.unity
+>>>>>>> remotes/origin/Kawai
   isLoaded: 1
   isActive: 1
 >>>>>>> remotes/origin/Mukai2
