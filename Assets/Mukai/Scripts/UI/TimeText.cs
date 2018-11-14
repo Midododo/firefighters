@@ -19,6 +19,6 @@ public class TimeText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "点数" + score.toString() + "点";
+        //this.GetComponent<Text>().text = "点数" + score.toString() + "点";
     }
 }
