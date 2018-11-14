@@ -289,6 +289,9 @@
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
       <HintPath>Assets/Midori/Resorces/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets/Mukai/Scripts/Sound/LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Midorikawa Ryo/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
