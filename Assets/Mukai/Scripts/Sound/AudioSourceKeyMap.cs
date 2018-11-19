@@ -3,5 +3,6 @@
 public enum AudioKey
 {
 	TitleBGM,
+	ResultBGM
 
 }

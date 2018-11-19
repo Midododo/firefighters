@@ -1,5 +1,6 @@
 ﻿using MBLDefine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,10 +10,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
+
 /// <summary>
 /// サウンドを管理する
 /// </summary>
-public class SoundManager : MonoBehaviour
+public class SoundManager : SingletonMonoBehaviour<SoundManager>
 {
     private const float MAX_DECIBEL = 0f;
     private const float MIN_DECIBEL = -80f;
@@ -27,10 +29,6 @@ public class SoundManager : MonoBehaviour
     private List<AudioSource> audioDatas = new List<AudioSource>();
 
     private SoundSetting soundSetting = new SoundSetting(ExternalFilePath.SOUND_SETTING);
-
-
-    public static SoundManager instance = null;
-
 
     /// <summary>
     /// SEのボリューム
@@ -71,22 +69,6 @@ public class SoundManager : MonoBehaviour
             soundSetting.SEVolume = 1f;
             soundSetting.BGMVolume = 1f;
         }
-
-        /* 変更点 */
-        //Check if there is already an instance of SoundManager
-        if (instance == null)
-        {
-            //if not, set it to this.
-            instance = this;
-        }
-        //If instance already exists:
-        else if (instance != this)
-        {
-            //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
-            Destroy(gameObject);
-        }
-        //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
