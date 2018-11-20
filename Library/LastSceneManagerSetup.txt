@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Kawai/Scene/asdgk.unity
+  isLoaded: 1
+  isActive: 1

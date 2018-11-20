@@ -292,6 +292,9 @@
     <Reference Include="JMOAssets_CartoonFXFreeWelcome">
       <HintPath>Assets/Midori/Resorces/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>Assets/Mukai/Scripts/Sound/LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Midorikawa Ryo/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -342,6 +345,7 @@
     <Compile Include="Packages\com.unity.standardevents\Editor\Importer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Kawai\Resources\WallTest.txt" />
     <None Include="Assets\Kawai\unti.txt" />
     <None Include="Assets\Midori\Resorces\Effects\JMO Assets\!JMO Assets Readme.txt" />
     <None Include="Assets\Midori\Resorces\Effects\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
@@ -365,7 +369,6 @@
     <None Include="Assets\Midori\Resorces\Models\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Midori\Resorces\Models\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\Midori\Resorces\Models\UnityChan\license.txt" />
-    <None Include="Assets\Mukai\unko.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
