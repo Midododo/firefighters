@@ -1,8 +1,12 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/Title.unity
 =======
 - path: Assets/Mukai/Scenes/TitleM.unity
 >>>>>>> remotes/origin/Mukai2
+=======
+- path: Assets/Midori/Scenes/testAnim2.unity
+>>>>>>> remotes/origin/kawai
   isLoaded: 1
   isActive: 1
