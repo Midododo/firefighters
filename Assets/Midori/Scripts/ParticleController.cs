@@ -27,6 +27,16 @@ public class ParticleController : MonoBehaviour
         //Debug.Log(other.name + "a");
         //Debug.Log(other.tag + "a");
 
+        // オブジェクトとの当たり判定
+        if (other.layer == 9)
+        {
+            Debug.Log("箱だよ");
+            Vector3 Direction = other.transform.position - this.transform.position;
+            Direction.y += 3.0f;
+            Direction *= 2.0f;
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Direction, ForceMode.Impulse);
+        }
+
         if (other.tag == "Fire")
         {
             // 現時点のstartColorの設定を取得

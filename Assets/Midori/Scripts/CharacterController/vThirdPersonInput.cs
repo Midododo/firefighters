@@ -12,6 +12,8 @@ namespace Invector.CharacterController
         [Header("Default Inputs")]
         public string horizontalInput = "Horizontal";
         public string verticallInput = "Vertical";
+        public string horizontalInput2 = "Horizontal2";
+        public string verticallInput2 = "Vertical2";
         public KeyCode jumpInput = KeyCode.Space;
         public KeyCode strafeInput = KeyCode.Tab;
         public KeyCode sprintInput = KeyCode.LeftShift;
@@ -90,9 +92,17 @@ namespace Invector.CharacterController
         #region Basic Locomotion Inputs      
 
         protected virtual void MoveCharacter()
-        {            
-            cc.input.x = Input.GetAxis(horizontalInput);
-            cc.input.y = Input.GetAxis(verticallInput);
+        {
+            if (transform.tag == "Player1")
+            {
+                cc.input.x = Input.GetAxis(horizontalInput);
+                cc.input.y = Input.GetAxis(verticallInput);
+            }
+            else if (transform.tag == "Player2")
+            {
+                cc.input.x = Input.GetAxis(horizontalInput2);
+                cc.input.y = Input.GetAxis(verticallInput2);
+            }
         }
 
         protected virtual void StrafeInput()
@@ -142,7 +152,7 @@ namespace Invector.CharacterController
 
             // tranform Character direction from camera if not KeepDirection
             //if (!keepDirection)
-                cc.UpdateTargetDirection(Camera.main != null ? Camera.main.transform : null);
+            cc.UpdateTargetDirection(Camera.main != null ? Camera.main.transform : null);
             // rotate the character with the camera while strafing        
             RotateWithCamera(Camera.main.transform != null ? Camera.main.transform : null);            
         }
