@@ -22,6 +22,7 @@ public class Fade : MonoBehaviour
         green = fadeImage.color.g;
         blue = fadeImage.color.b;
         alfa = 1;
+        isFadeOut = false;
         isFadeIn = true;
     }
 
@@ -60,6 +61,7 @@ public class Fade : MonoBehaviour
             alfa = 1;
             isFadeOut = false;
             SceneManager.LoadScene(NextScene);
+            isFadeIn = true;
         }
     }
 

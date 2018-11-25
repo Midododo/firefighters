@@ -4,17 +4,17 @@ using System.Collections;
 
 public class PushLogoController : MonoBehaviour
 {
-    public string next;
-
-
     private bool fade = false;
     private bool push = false;
+
+    private Fade FadeScript;
 
     // Use this for initialization
     void Start()
     {
-
+        FadeScript = GameObject.Find("Fade").GetComponent<Fade>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +22,7 @@ public class PushLogoController : MonoBehaviour
         {
             // 何かボタンを押したときの処理
             if (Input.GetKeyDown(KeyCode.Space))
-            {
+            {   
                 if (!push)
                 {
                     if (gameObject.GetComponent<AlphaChanger>().enabled)
@@ -40,9 +40,9 @@ public class PushLogoController : MonoBehaviour
             // 点滅アニメーションが終了したら
             else if (gameObject.GetComponent<Blinker>().Count == gameObject.GetComponent<Blinker>().cnt)
             {
-                GameObject.Find("Fade").GetComponent<Fade>().SetFadeOutFlag(next);
-                if (!GameObject.Find("Fade").GetComponent<Fade>().IsFading())
+                if(FadeScript.IsFading() == false)
                 {
+                    FadeScript.SetFadeOutFlag("Tutorial");
                     SoundManager.Instance.Stop(AudioKey.TitleBGM);
                 }
             }
@@ -51,7 +51,7 @@ public class PushLogoController : MonoBehaviour
 
         else if (!fade)
         {        // フェードインが完了したら
-            if (!GameObject.Find("Fade").GetComponent<Fade>().IsFading())
+            if (!FadeScript.IsFading())
             {
                 SoundManager.Instance.Play(AudioKey.TitleBGM);
                 this.gameObject.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 1.0f);
@@ -59,8 +59,6 @@ public class PushLogoController : MonoBehaviour
                 fade = !fade;
             }
         }
-
-
     }
 
     //Alpha値を更新してColorを返す
@@ -69,5 +67,4 @@ public class PushLogoController : MonoBehaviour
         color.a = 1.0f;
         return color;
     }
-
 }

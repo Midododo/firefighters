@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Midori/Scenes/test.unity
-=======
-- path: Assets/Kawai/Scenes/Trial.unity
->>>>>>> remotes/origin/kawai
+- path: Assets/Scenes/Title.unity
   isLoaded: 1
   isActive: 1
