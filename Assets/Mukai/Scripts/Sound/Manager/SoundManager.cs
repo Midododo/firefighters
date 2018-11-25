@@ -39,7 +39,6 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         { return soundSetting.SEVolume; }
         set
         {
-            // ミキサーセットしてないと警告出るけどスルーでオナシャス
             mixer.SetFloat(AudioMixerParamName.SEVolume.String(), GetDecibelConversion(value));
             soundSetting.SEVolume = value;
         }
@@ -134,6 +133,32 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         Stop(ConvertAudioKey(key));
     }
 
+    /// サウンドをミュートする
+    /// <param name="key">サウンドのキー</param>
+    public void Mute(AudioKey key)
+    {
+        audioDatas[(int)key].mute = true;
+    }
+    /// サウンドをミュートする
+    /// <param name="key">サウンドのキー</param>
+    public void Mute(string key)
+    {
+        Mute(ConvertAudioKey(key));
+    }
+
+    /// サウンドをミュート解除する
+    public void UnMute(AudioKey key)
+    {
+        audioDatas[(int)key].mute = false;
+    }
+    /// サウンドをミュート解除する
+    /// <param name="key">サウンドのキー</param>
+    public void UnMute(string key)
+    {
+        UnMute(ConvertAudioKey(key));
+    }
+
+
     /// <summary>
     /// 設定ファイルを読み込む
     /// </summary>
@@ -179,6 +204,8 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         return Mathf.Clamp(DecibelConversion(value), MIN_DECIBEL, MAX_DECIBEL);
     }
+
+
 
     #region CustomInspector
 
