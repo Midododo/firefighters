@@ -103,8 +103,13 @@ namespace Invector.CharacterController
         // action bools
         [HideInInspector]
         public bool
-            isJumping;
+            isJumping,
+            isSplashing;
 
+        public bool GetIsSplashing
+        {
+            get{ return this.isSplashing; }
+        }
         protected void RemoveComponents()
         {
             if (_capsuleCollider != null) Destroy(_capsuleCollider);

@@ -286,6 +286,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="JMOAssets">
+      <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
+      <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
+    </Reference>
     <Reference Include="LitJson">
       <HintPath>Assets/Plugins/JOKER/LitJson.dll</HintPath>
     </Reference>
@@ -309,12 +315,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="JMOAssets_CartoonFXFreeWelcome">
-      <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
-    </Reference>
-    <Reference Include="JMOAssets">
-      <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\mscorlib.dll</HintPath>
@@ -391,6 +391,9 @@
     <Compile Include="Packages\com.unity.package-manager-ui\Editor\Sources\UI\PackagesLoading.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Kawai\Resources\MapData00.txt" />
+    <None Include="Assets\Kawai\Resources\MapData01.txt" />
+    <None Include="Assets\Kawai\Resources\MapData02.txt" />
     <None Include="Assets\Kawai\Resources\WallTest.txt" />
     <None Include="Assets\Kawai\unti.txt" />
     <None Include="Assets\Midori\Resources\Effects\JMO Assets\!JMO Assets Readme.txt" />
