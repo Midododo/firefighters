@@ -26,7 +26,7 @@ public class TimeCountSystem : MonoBehaviour
             time -= Time.deltaTime;
             GetComponent<Text>().text = ((int)time).ToString();
             //0行ったら終了
-            if (time == 0) flag = false;
+            if (time <= 0) flag = false;
         }
     }
 }

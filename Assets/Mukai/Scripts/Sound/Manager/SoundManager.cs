@@ -158,6 +158,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         UnMute(ConvertAudioKey(key));
     }
 
+    /// サウンドのボリュームを直値で変更
+    public void ChangeVol(AudioKey key,float vol)
+    {
+        audioDatas[(int)key].volume = vol;
+    }
 
     /// <summary>
     /// 設定ファイルを読み込む
