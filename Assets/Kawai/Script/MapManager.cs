@@ -17,10 +17,20 @@ public class MapManager : MonoBehaviour
     public float m_Alpha = 0.0f;
     public float m_FadeTime = 2.0f;
 
+    //=====================================================
+    // マップを動かすのに必要な物
+    public float m_TimeElapsed = 0.0f;
+    private float m_MoveDistance = 10.0f;
+    public bool m_isMove = false;
+    private bool m_MoveDirection = false; // false down   true up
+
+    //=====================================================
+    // マップの読み込みに必要な物
     private const string MapDataPathHead = "Assets/Kawai/Resources/MapData";
     private const string MapDataPathExtention = ".txt";
     private const string MapSizeStart = "#MapSize";
     private const string MapWallStart = "#WallData";
+    private const string MapFireStart = "#FireData";
     //=====================================================
     // マップ構成に使うプリファブの読み込み
     public GameObject prefab_GroundTile;
@@ -51,6 +61,8 @@ public class MapManager : MonoBehaviour
 
     public GameObject prefab_TestObject;
 
+    public GameObject prefab_FireA;
+
     //=====================================================
     // マップオブジェクトの入れ物
     private GameObject[][] m_GroundTile;
@@ -66,6 +78,9 @@ public class MapManager : MonoBehaviour
 
     private Vector3[][] m_OgWallPos;
 
+    private GameObject[][] m_Fire;
+
+    private Vector3[][] m_OgFirePos;
     //=====================================================
     // ファイル読み込みのクラス
     private OpenTextFile m_OpenTextFile;
@@ -83,6 +98,18 @@ public class MapManager : MonoBehaviour
     void Update ()
     {
         UpdateVisibility();
+
+        if (m_isMove)
+        {
+            if(m_MoveDirection)
+            {
+                FloorUpUpdate();
+            }
+            else
+            {
+                FloorDownUpdate();
+            }
+        }
     }
 
 
@@ -136,6 +163,26 @@ public class MapManager : MonoBehaviour
             WallData[i] = numArray;
         }
 
+        //=======================================
+        // look for fire data
+        while (line != MapFireStart)
+        {
+            line = reader.ReadLine();
+        }
+        //line = reader.ReadLine();
+
+        int[][] FireData = new int[100][];
+
+        // read data for the z length
+        for (int i = 0; i < (mapSizeArray[1]); i++)
+        {
+            line = reader.ReadLine();
+
+            var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
+            FireData[i] = numArray;
+        }
+
+
 
         reader.Close();
 
@@ -144,6 +191,7 @@ public class MapManager : MonoBehaviour
         // the creation functions
         CreateFloor();
         CreateWalls(WallData);
+        CreateFire(FireData);
     }
 
     //=========================================================================
@@ -333,6 +381,39 @@ public class MapManager : MonoBehaviour
     } // end function
 
     //=========================================================================
+    // 炎の生成処理
+    void CreateFire(int[][] data)
+    {
+
+        m_Fire = new GameObject[m_MapSizeZ][];
+        m_OgFirePos = new Vector3[m_MapSizeZ][];
+
+        for (int z = 0; z < (m_MapSizeZ); z++)
+        {
+                m_Fire[z] = new GameObject[m_MapSizeX];
+                m_OgFirePos[z] = new Vector3[m_MapSizeX];
+                for (int x = 0; x < m_MapSizeX; x++)
+            {
+                switch (data[z][x])
+                {
+                    case 0:
+                        break;
+                    case 1:
+                            m_Fire[z][x] = Instantiate(prefab_FireA);
+                        break;
+                }
+                if (data[z][x] != 0)
+                {
+                        m_Fire[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
+                }
+
+
+            } // for x
+        } // for z
+
+    } // end function
+
+    //=========================================================================
     // 
     public void SetVisibility(bool isVisible)
     {
@@ -384,6 +465,16 @@ public class MapManager : MonoBehaviour
                         Rend.material.color = new Color(1.0f, 1.0f, 1.0f, m_Alpha);
                     }// foreach
                 }// if
+
+                //if (m_Fire[z][x] != null)
+                //{
+                //    var childRend = m_Fire[z][x].GetComponentInChildren<Renderer>();
+
+                //    foreach(var Rend in childRend)
+                //    {
+                //        Rend.material.color = new Color(1.0f, 1.0f, 1.0f, m_Alpha);
+                //    }// foreach
+                //}// if
             }// for x
         }// for z
     }// end function
@@ -392,8 +483,8 @@ public class MapManager : MonoBehaviour
     // 
     void UpdateVisibility()
     {
-        //if (m_Active == m_Visiable)
-        //{ return; }
+        if (m_Active == m_Visiable)
+        { return; }
 
         if (m_Active)
         {
@@ -459,6 +550,11 @@ public class MapManager : MonoBehaviour
                 {
                     m_Wall[z][x].transform.position += vel;
                 }// if
+
+                if (m_Fire[z][x] != null) // check if object exist
+                {
+                    m_Fire[z][x].transform.position += vel;
+                }
             }// for x
         }// for z
     }// end function
@@ -499,6 +595,12 @@ public class MapManager : MonoBehaviour
                 {
                     m_Wall[z][x].transform.localPosition = pos + m_OgWallPos[z][x];
                 }// if
+
+                if (m_Fire[z][x] != null) // check if object exists
+                {
+                    m_Fire[z][x].transform.localPosition = pos + m_OgFirePos[z][x];
+                }// if
+
             }// for x
         }// for z
     }// end function
@@ -539,7 +641,93 @@ public class MapManager : MonoBehaviour
                 {
                     m_Wall[z][x].SetActive(Active);
                 }// if
+
+                if (m_Fire[z][x] != null) // check if exist
+                {
+                    m_Fire[z][x].SetActive(Active);
+                }
             }// for x
         }// for z
     }// end function
+
+    //=========================================================================
+    // マップのα値のゲット
+    public float GetAlpha()
+    {
+        return m_Alpha;
+    }
+
+    //=========================================================================
+    // マップのアクティブ状況を取得
+    public bool GetActive()
+    {
+        return m_Active;
+    }
+
+    //=========================================================================
+    // マップのアクティブ状況を取得
+    public bool GetMoving()
+    {
+        return m_isMove;
+    }
+
+    //=========================================================================
+    // マップを一部屋下げる
+    public void MoveFloorDown()
+    {
+        m_isMove = true;
+        m_MoveDirection = true;
+        m_TimeElapsed = 0.0f;
+    }
+    //=========================================================================
+    // マップを一部屋下げるアップデート用
+    void FloorDownUpdate()
+    {
+        float time = Time.deltaTime;
+
+        m_TimeElapsed += time;
+
+        if (m_TimeElapsed >= m_FadeTime)
+        {
+            m_isMove = false;
+
+            time -= m_TimeElapsed - m_FadeTime;
+        }
+
+        var fTemp = m_MoveDistance / m_FadeTime;
+        fTemp *= time;
+
+        Move(new Vector3(0.0f, -fTemp, 0.0f));
+    }
+
+    //=========================================================================
+    // マップを一部屋上げる
+    public void MoveFloorUp()
+    {
+        m_isMove = true;
+        m_MoveDirection = false;
+        m_TimeElapsed = 0.0f;
+    }
+
+    //=========================================================================
+    // マップを一部屋上げるアップデート用
+    void FloorUpUpdate()
+    {
+        float time = Time.deltaTime;
+
+        m_TimeElapsed += time;
+
+        if (m_TimeElapsed >= m_FadeTime)
+        {
+            m_isMove = false;
+
+            time -= m_TimeElapsed - m_FadeTime;
+        }
+
+        var fTemp = m_MoveDistance / m_FadeTime;
+        fTemp *= time;
+
+        Move(new Vector3(0.0f, fTemp, 0.0f));
+    }
+
 } // end class

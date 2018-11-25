@@ -67,6 +67,8 @@ MonoBehaviour:
   m_Visiable: 0
   m_Alpha: 0
   m_FadeTime: 0.5
+  m_TimeElapsed: 0
+  m_isMove: 0
   prefab_GroundTile: {fileID: 1401337489490102, guid: 2bfa03c2095a51140b84fa14b0cac1dc,
     type: 2}
   prefab_OutWallV: {fileID: 1826265806841472, guid: 44e45236bfd9ce34b899245af442b0e7,
@@ -106,4 +108,6 @@ MonoBehaviour:
   prefab_DoorSW: {fileID: 1907478620849396, guid: c7ac8cb03846637408390c3541e7aa32,
     type: 2}
   prefab_TestObject: {fileID: 1056718722478204, guid: 3a87d9969d417964e9c58e55384d9144,
+    type: 2}
+  prefab_FireA: {fileID: 1613313758168404, guid: 3ffb018765e252248a96368d4066af10,
     type: 2}
