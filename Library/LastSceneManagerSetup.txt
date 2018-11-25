@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Midori/Scenes/testAnim2.unity
+- path: Assets/Kawai/Scenes/Trial.unity
   isLoaded: 1
   isActive: 1
