@@ -40,8 +40,8 @@ public class PushLogoController : MonoBehaviour
             // 点滅アニメーションが終了したら
             else if (gameObject.GetComponent<Blinker>().Count == gameObject.GetComponent<Blinker>().cnt)
             {
-                GameObject.Find("Fade").GetComponent<Fade>().SetFadeOutFlag(next);
-                if (!GameObject.Find("Fade").GetComponent<Fade>().IsFading())
+                GameObject.Find("Panel").GetComponent<Fade>().SetFadeOutFlag(next);
+                if (!GameObject.Find("Panel").GetComponent<Fade>().IsFading())
                 {
                     SoundManager.Instance.Stop(AudioKey.TitleBGM);
                 }
@@ -51,7 +51,7 @@ public class PushLogoController : MonoBehaviour
 
         else if (!fade)
         {        // フェードインが完了したら
-            if (!GameObject.Find("Fade").GetComponent<Fade>().IsFading())
+            if (!GameObject.Find("Panel").GetComponent<Fade>().IsFading())
             {
                 SoundManager.Instance.Play(AudioKey.TitleBGM);
                 this.gameObject.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 1.0f);
