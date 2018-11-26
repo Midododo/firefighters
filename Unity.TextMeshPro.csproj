@@ -290,7 +290,7 @@
       <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>Assets/Plugins/JOKER/LitJson.dll</HintPath>
+      <HintPath>Assets/Mukai/Scripts/Sound/Manager/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="NCalc">
       <HintPath>Assets/Plugins/JOKER/NCalc.dll</HintPath>
