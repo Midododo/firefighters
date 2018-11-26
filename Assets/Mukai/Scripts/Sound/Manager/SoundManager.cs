@@ -59,6 +59,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
 
     private void Awake()
     {
+    
         try
         {
             LoadSettingFile();
@@ -69,6 +70,13 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             soundSetting.SEVolume = 1f;
             soundSetting.BGMVolume = 1f;
         }
+        if (this != Instance)
+        {
+            Destroy(this);
+            return;
+        }
+        DontDestroyOnLoad(this.gameObject);
+
     }
 
     private void Start()
