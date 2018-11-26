@@ -7,5 +7,6 @@ public enum AudioKey
 	Push,
 	GameBGM_ON,
 	GameBGM_OFF,
+	TutrialBGM,
 
 }

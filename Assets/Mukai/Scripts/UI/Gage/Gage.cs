@@ -31,14 +31,14 @@ public class Gage : MonoBehaviour
 	void Update ()
     {
 
-        //if (Input.GetKey(KeyCode.UpArrow))
-        //{
-        //    point++;
-        //}
-        //if (Input.GetKey(KeyCode.DownArrow))
-        //{
-        //    point--;
-        //}
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            point++;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            point--;
+        }
 
         // 前フレームと比較して今回のフレームでMAXに行ったら
         if (pre_point < GAGE_MAX && point == GAGE_MAX) { type = 1; }
