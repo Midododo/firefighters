@@ -19,6 +19,7 @@ public class MessageWindow : MonoBehaviour
     bool x_flag;
     bool y_flag;
 
+    [SerializeField]
     private bool flag = true;
 
     // Use this for initialization
