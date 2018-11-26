@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Game.unity
-=======
-- path: Assets/Mukai/Scenes/TitleM.unity
->>>>>>> remotes/origin/Mukai2
   isLoaded: 1
   isActive: 1

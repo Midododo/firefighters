@@ -7,9 +7,4 @@ public enum AudioKey
 	GameBGM_OFF,
 	GameBGM_ON,
 	Push,
-<<<<<<< HEAD
-	GameBGM_ON,
-=======
->>>>>>> remotes/origin/Mukai2
-
 }
