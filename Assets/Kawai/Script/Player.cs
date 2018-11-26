@@ -6,6 +6,14 @@ public class Player : MonoBehaviour {
 
     public int m_PlayerIdx;
 
+    public bool m_Shake = false;
+    public int m_ShakeTimeMax = 10;
+    public int m_ShakeTime = 0;
+    public float m_GuageFillValue = 0.5f;
+    public float m_Guage = 0;
+    public const float m_GuageMax = 100.0f;
+    public float m_ShakeLimiter = 10;
+
     public float m_MaxVelocity = 20.0f;
 
     private Rigidbody m_Rbody;
@@ -27,7 +35,45 @@ public class Player : MonoBehaviour {
     {
 
         Move();
-	}
+
+        var accelL = m_Input.GetComponent<JoyconInput>().GetAccel(m_PlayerIdx, true);
+        var accelR = m_Input.GetComponent<JoyconInput>().GetAccel(m_PlayerIdx, false);
+
+        var gyroL = m_Input.GetComponent<JoyconInput>().GetGyro(m_PlayerIdx, true);
+        var gyroR = m_Input.GetComponent<JoyconInput>().GetGyro(m_PlayerIdx, false);
+
+        float tx = ((Mathf.Abs(accelL.x) * Mathf.Abs(gyroL.x)) + (Mathf.Abs(accelR.x) * Mathf.Abs(gyroR.x))) / 2;
+        float ty = ((Mathf.Abs(accelL.y) * Mathf.Abs(gyroL.y)) + (Mathf.Abs(accelR.y) * Mathf.Abs(gyroR.y))) / 2;
+        float tz = ((Mathf.Abs(accelL.z) * Mathf.Abs(gyroL.z)) + (Mathf.Abs(accelR.z) * Mathf.Abs(gyroR.z))) / 2;
+
+
+        if (tx > m_ShakeLimiter || ty > m_ShakeLimiter || tz > m_ShakeLimiter)
+        {
+            m_Shake = true;
+            m_ShakeTime = m_ShakeTimeMax;
+        }
+
+
+        if (m_Shake)
+        {
+            if (m_Guage < m_GuageMax)
+            {
+                m_Guage += m_GuageFillValue;
+            }
+            else
+            {
+                m_Guage = m_GuageMax;
+            }
+
+
+            m_ShakeTime--;
+            if (m_ShakeTime <= 0)
+            {
+                m_Shake = false;
+            }
+        }
+
+    }
 
 
     void Action()
@@ -64,8 +110,8 @@ public class Player : MonoBehaviour {
 
         //tVec2.x = Mathf.Cos(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
         //tVec2.y = Mathf.Sin(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
-        tVec2.x = Mathf.Cos(tStickAng - 45) * m_MaxVelocity;
-        tVec2.y = Mathf.Sin(tStickAng - 45) * m_MaxVelocity;
+        tVec2.x = Mathf.Cos(tStickAng) * m_MaxVelocity;
+        tVec2.y = Mathf.Sin(tStickAng) * m_MaxVelocity;
 
 
         m_OldPos = transform.position;
@@ -80,6 +126,11 @@ public class Player : MonoBehaviour {
 
     }
 
+
+    public float GetGuageValue()
+    {
+        return m_Guage;
+    }
 
 
     void DebugMove()
@@ -139,5 +190,11 @@ public class Player : MonoBehaviour {
 
         print(gameObject.name + collision.collider.name + "exit");
 
+    }
+
+    void OnTriggerEnter(Collider Collider)
+    {
+        var hitObject = Collider.gameObject.name;
+        print("I collided with the " + hitObject + " !");
     }
 }

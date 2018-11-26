@@ -191,7 +191,8 @@ public class MapManager : MonoBehaviour
         // the creation functions
         CreateFloor();
         CreateWalls(WallData);
-        CreateFire(FireData);
+        //CreateFire(FireData);
+
     }
 
     //=========================================================================
@@ -468,9 +469,9 @@ public class MapManager : MonoBehaviour
 
                 //if (m_Fire[z][x] != null)
                 //{
-                //    var childRend = m_Fire[z][x].GetComponentInChildren<Renderer>();
+                //    var childRend = m_Fire[z][x].GetComponentsInChildren<Renderer>();
 
-                //    foreach(var Rend in childRend)
+                //    foreach (var Rend in childRend)
                 //    {
                 //        Rend.material.color = new Color(1.0f, 1.0f, 1.0f, m_Alpha);
                 //    }// foreach
@@ -551,10 +552,10 @@ public class MapManager : MonoBehaviour
                     m_Wall[z][x].transform.position += vel;
                 }// if
 
-                if (m_Fire[z][x] != null) // check if object exist
-                {
-                    m_Fire[z][x].transform.position += vel;
-                }
+                //if (m_Fire[z][x] != null) // check if object exist
+                //{
+                //    m_Fire[z][x].transform.position += vel;
+                //}
             }// for x
         }// for z
     }// end function
@@ -609,6 +610,12 @@ public class MapManager : MonoBehaviour
     // マップの移動
     public void SetActive(bool Active)
     {
+
+        if (m_Active == Active)
+        {
+            return;
+        }
+        m_Active = Active;
         // horizon
         for (int z = 0; z < 2; z++)
         {
@@ -642,10 +649,10 @@ public class MapManager : MonoBehaviour
                     m_Wall[z][x].SetActive(Active);
                 }// if
 
-                if (m_Fire[z][x] != null) // check if exist
-                {
-                    m_Fire[z][x].SetActive(Active);
-                }
+                //if (m_Fire[z][x] != null) // check if exist
+                //{
+                //    m_Fire[z][x].SetActive(Active);
+                //}
             }// for x
         }// for z
     }// end function
