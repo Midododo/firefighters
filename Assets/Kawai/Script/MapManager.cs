@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 
 public class MapManager : MonoBehaviour
@@ -194,21 +195,25 @@ public class MapManager : MonoBehaviour
 
         //=======================================
         // look for event data
-        while (line != MapEventStart)
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            line = reader.ReadLine();
+            while (line != MapEventStart)
+            {
+                line = reader.ReadLine();
+            }
+
+            int[][] EventData = new int[100][];
+
+            for (int i = 0; i < (mapSizeArray[1]); i++)
+            {
+                line = reader.ReadLine();
+
+                var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
+                EventData[i] = numArray;
+            }
+
+            CreateEventMap(EventData);
         }
-
-        int[][] EventData = new int[100][];
-
-        for (int i = 0; i < (mapSizeArray[1]); i++)
-        {
-            line = reader.ReadLine();
-
-            var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
-            EventData[i] = numArray;
-        }
-
 
         reader.Close();
 
@@ -218,7 +223,6 @@ public class MapManager : MonoBehaviour
         CreateFloor();
         CreateWalls(WallData);
         CreateFire(FireData);
-        CreateEventMap(EventData);
 
         int test = 0;
         test++;
