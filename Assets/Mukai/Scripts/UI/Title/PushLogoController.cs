@@ -27,7 +27,7 @@ public class PushLogoController : MonoBehaviour
                 {
                     if (gameObject.GetComponent<AlphaChanger>().enabled)
                     {
-                        SoundManager.Instance.PlayOneShot(AudioKey.Push);
+                        //SoundManager.Instance.PlayOneShot(AudioKey.Push);
                         // プッシュロゴの明滅アニメーションをやめ、一旦α値を1.0に再設定する
                         this.gameObject.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 1.0f);
                         gameObject.GetComponent<AlphaChanger>().enabled = false;
@@ -43,7 +43,7 @@ public class PushLogoController : MonoBehaviour
                 if(FadeScript.IsFading() == false)
                 {
                     FadeScript.SetFadeOutFlag("Tutorial");
-                    SoundManager.Instance.Stop(AudioKey.TitleBGM);
+                    //SoundManager.Instance.Stop(AudioKey.TitleBGM);
                 }
             }
 
@@ -53,7 +53,7 @@ public class PushLogoController : MonoBehaviour
         {        // フェードインが完了したら
             if (!FadeScript.IsFading())
             {
-                SoundManager.Instance.Play(AudioKey.TitleBGM);
+                //SoundManager.Instance.Play(AudioKey.TitleBGM);
                 this.gameObject.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 1.0f);
                 gameObject.GetComponent<AlphaChanger>().enabled = true;
                 fade = !fade;

@@ -4,8 +4,8 @@ public enum AudioKey
 {
 	TitleBGM,
 	ResultBGM,
-	GameBGM_ON,
 	GameBGM_OFF,
 	Push,
-S
+	GameBGM_ON,
+
 }

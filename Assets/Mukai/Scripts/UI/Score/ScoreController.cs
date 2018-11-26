@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    [SerializeField]
-    private int point;
+    public static int point;
 
     private Text scoretext;
 
