@@ -26,6 +26,7 @@ public class ParticleController : MonoBehaviour
     {
         //Debug.Log(other.name + "a");
         //Debug.Log(other.tag + "a");
+        Debug.Log(other.layer);
 
         // オブジェクトとの当たり判定
         if (other.layer == 9)
@@ -37,8 +38,9 @@ public class ParticleController : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().AddForce(Direction, ForceMode.Impulse);
         }
 
-        if (other.tag == "Fire")
+        if (other.tag == "Fire" || other.layer == 31)
         {
+
             // 現時点のstartColorの設定を取得
             Color32 colorTemp = other.GetComponent<ParticleSystem>().main.startColor.color;
 
