@@ -31,6 +31,7 @@ public class MapManager : MonoBehaviour
     private const string MapSizeStart = "#MapSize";
     private const string MapWallStart = "#WallData";
     private const string MapFireStart = "#FireData";
+    private const string MapEventStart = "#EventData";
     //=====================================================
     // マップ構成に使うプリファブの読み込み
     public GameObject prefab_GroundTile;
@@ -62,6 +63,11 @@ public class MapManager : MonoBehaviour
     public GameObject prefab_TestObject;
 
     public GameObject prefab_FireA;
+    public GameObject prefab_FireRing;
+
+    public GameObject prefab_AoEEvent;
+    public GameObject prefab_ExitEvent;
+
 
     //=====================================================
     // マップオブジェクトの入れ物
@@ -75,12 +81,16 @@ public class MapManager : MonoBehaviour
 
     // 壁
     private GameObject[][] m_Wall;
-
     private Vector3[][] m_OgWallPos;
 
-    private GameObject[][] m_Fire;
+    // 炎
+    private List<GameObject> m_Fire = new List<GameObject>();
+    private List<Vector3> m_OgFirePos = new List<Vector3>(); 
 
-    private Vector3[][] m_OgFirePos;
+    // イベント
+    public List<GameObject> m_Event = new List<GameObject>();
+    private List<Vector3> m_OgEventPos = new List<Vector3>();
+
     //=====================================================
     // ファイル読み込みのクラス
     private OpenTextFile m_OpenTextFile;
@@ -182,6 +192,22 @@ public class MapManager : MonoBehaviour
             FireData[i] = numArray;
         }
 
+        //=======================================
+        // look for event data
+        while (line != MapEventStart)
+        {
+            line = reader.ReadLine();
+        }
+
+        int[][] EventData = new int[100][];
+
+        for (int i = 0; i < (mapSizeArray[1]); i++)
+        {
+            line = reader.ReadLine();
+
+            var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
+            EventData[i] = numArray;
+        }
 
 
         reader.Close();
@@ -191,8 +217,11 @@ public class MapManager : MonoBehaviour
         // the creation functions
         CreateFloor();
         CreateWalls(WallData);
-        //CreateFire(FireData);
+        CreateFire(FireData);
+        CreateEventMap(EventData);
 
+        int test = 0;
+        test++;
     }
 
     //=========================================================================
@@ -385,35 +414,50 @@ public class MapManager : MonoBehaviour
     // 炎の生成処理
     void CreateFire(int[][] data)
     {
-
-        m_Fire = new GameObject[m_MapSizeZ][];
-        m_OgFirePos = new Vector3[m_MapSizeZ][];
-
         for (int z = 0; z < (m_MapSizeZ); z++)
         {
-                m_Fire[z] = new GameObject[m_MapSizeX];
-                m_OgFirePos[z] = new Vector3[m_MapSizeX];
-                for (int x = 0; x < m_MapSizeX; x++)
+            for (int x = 0; x < m_MapSizeX; x++)
             {
+                if(data[z][x] == 0)
+                { continue; }
+
                 switch (data[z][x])
                 {
                     case 0:
                         break;
                     case 1:
-                            m_Fire[z][x] = Instantiate(prefab_FireA);
+                            m_Fire.Add(Instantiate(prefab_FireA));
                         break;
                 }
-                if (data[z][x] != 0)
-                {
-                        m_Fire[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
-                }
-
-
+                    m_Fire[(m_Fire.Count - 1)].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
             } // for x
         } // for z
-
     } // end function
 
+    //=========================================================================
+    // 炎の生成処理
+    void CreateEventMap(int[][] data)
+    {
+        for (int z = 0; z < m_MapSizeZ; z++)
+        {
+            for (int x = 0; x < m_MapSizeX; x++)
+            {
+                if (data[z][x] == 0)
+                { continue; }
+
+                switch(data[z][x])
+                {
+                    case 1:
+                        m_Event.Add(Instantiate(prefab_AoEEvent));
+                        break;
+                    case 2:
+                        m_Event.Add(Instantiate(prefab_ExitEvent));
+                        break;
+                }
+                m_Event[(m_Event.Count - 1)].transform.position = new Vector3((float)(x * m_MapSectionSize) + (m_MapSectionSize / 2), 0.0f, (float)(z * m_MapSectionSize) + (m_MapSectionSize / 2));
+            }
+        }
+    }
     //=========================================================================
     // 
     public void SetVisibility(bool isVisible)
@@ -485,7 +529,9 @@ public class MapManager : MonoBehaviour
     void UpdateVisibility()
     {
         if (m_Active == m_Visiable)
-        { return; }
+        {
+            return;
+        }
 
         if (m_Active)
         {
@@ -551,13 +597,15 @@ public class MapManager : MonoBehaviour
                 {
                     m_Wall[z][x].transform.position += vel;
                 }// if
-
-                //if (m_Fire[z][x] != null) // check if object exist
-                //{
-                //    m_Fire[z][x].transform.position += vel;
-                //}
             }// for x
         }// for z
+
+        // move fire
+        for (int i = 0; i < m_Fire.Count; i++)
+        {
+            m_Fire[i].transform.localPosition = vel;
+        }
+
     }// end function
 
     //=========================================================================
@@ -597,13 +645,15 @@ public class MapManager : MonoBehaviour
                     m_Wall[z][x].transform.localPosition = pos + m_OgWallPos[z][x];
                 }// if
 
-                if (m_Fire[z][x] != null) // check if object exists
-                {
-                    m_Fire[z][x].transform.localPosition = pos + m_OgFirePos[z][x];
-                }// if
-
             }// for x
         }// for z
+
+        // set fire pos
+        for (int i = 0; i < m_Fire.Count; i++)
+        {
+            m_Fire[i].transform.localPosition = pos + m_OgFirePos[i];
+        }
+
     }// end function
 
     //=========================================================================
@@ -736,5 +786,13 @@ public class MapManager : MonoBehaviour
 
         Move(new Vector3(0.0f, fTemp, 0.0f));
     }
+
+
+    public void YogaFire(Vector3 pos)
+    {
+        m_Fire.Add(Instantiate(prefab_FireRing));
+        m_Fire[(m_Fire.Count - 1)].transform.position = pos;
+    }
+
 
 } // end class

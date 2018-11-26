@@ -192,9 +192,14 @@ public class Player : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter(Collider Collider)
+    public void OnTriggerEnter(Collider Collider)
     {
         var hitObject = Collider.gameObject.name;
         print("I collided with the " + hitObject + " !");
+
+        if (Collider.gameObject.name == "evAoE(Clone)")
+        {
+            print("fuck this nigga gay");
+        }
     }
 }
