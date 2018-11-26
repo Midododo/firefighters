@@ -31,6 +31,9 @@ public class CameraController2 : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        m_Targets[0] = GameObject.FindWithTag("Player1").transform;
+        m_Targets[1] = GameObject.FindWithTag("Player2").transform;
+
         //任意の位置にカメラを移動
         Move();
 

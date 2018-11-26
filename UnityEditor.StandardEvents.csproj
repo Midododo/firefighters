@@ -293,7 +293,7 @@
       <HintPath>Assets/Midori/Resources/Effects/JMO Assets/Editor/JMOAssets_CartoonFXFreeWelcome.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>Assets/Plugins/JOKER/LitJson.dll</HintPath>
+      <HintPath>Assets/Mukai/Scripts/Sound/Manager/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="NCalc">
       <HintPath>Assets/Plugins/JOKER/NCalc.dll</HintPath>
@@ -375,6 +375,7 @@
     <None Include="Assets\Midori\Resources\Models\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Midori\Resources\Models\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\Midori\Resources\Models\UnityChan\license.txt" />
+    <None Include="Assets\Mukai\Resources\Fonts\Pixel Font - Tripfive\_README.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

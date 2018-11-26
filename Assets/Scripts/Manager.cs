@@ -44,7 +44,7 @@ public class Manager : MonoBehaviour
         m_Player[0] = Instantiate(prefab_Player, this.transform.position, transform.rotation);
         m_Player[0].tag = "Player1";
         m_Player[1] = Instantiate(prefab_Player, this.transform.position, transform.rotation);
-        m_Player[0].tag = "Player2";
+        m_Player[1].tag = "Player2";
         GameObject.Find("CameraRig").GetComponent<CameraController2>().SetCamera(m_Player[0], 0);
         GameObject.Find("CameraRig").GetComponent<CameraController2>().SetCamera(m_Player[1], 1);
 
