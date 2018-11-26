@@ -9,6 +9,7 @@ public class CameraController2 : MonoBehaviour {
     public float m_MinSize = 6.5f;                  // カメラに可能な最小の平行投影サイズ
     /*[HideInInspector]*/ public Transform[] m_Targets; // カメラが含む必要のあるすべてのターゲット
 
+    private int Camera_Num = 2;
 
     private Camera m_Camera;                        // カメラの参照に使用
     private float m_ZoomSpeed;                      // 平行投影サイズを緩やかに縮小するための参照速度
@@ -18,9 +19,15 @@ public class CameraController2 : MonoBehaviour {
 
     private void Awake()
     {
+        m_Targets = new Transform[Camera_Num];
+
         m_Camera = GetComponentInChildren<Camera>();
     }
 
+    public void SetCamera(GameObject Player, int i)
+    {
+        m_Targets[i] = Player.transform;
+    }
 
     private void FixedUpdate()
     {

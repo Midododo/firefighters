@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Kawai/Scenes/Trial.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Title.unity
+=======
+- path: Assets/Mukai/Scenes/TutrialM.unity
+>>>>>>> remotes/origin/Mukai2
+>>>>>>> c08aa3138ea99e01c60f85bfe8f4852b9343aecf
   isLoaded: 1
   isActive: 1
