@@ -12,6 +12,7 @@ public class TrialManager : MonoBehaviour
 
     public GameObject prefab_Map;
     public GameObject prefab_Player;
+    public GameObject ui;
 
     private GameObject[] m_Map;
     private GameObject m_Player;
@@ -72,17 +73,19 @@ public class TrialManager : MonoBehaviour
         {
             if (m_Map[i].GetComponent<MapManager>().GetAlpha() == 0.0f)
             {
-                //m_Map[i].GetComponent<MapManager>().SetActive(false);
+                m_Map[i].GetComponent<MapManager>().SetActive(false);
             }
-            else //if (m_Map[i].GetComponent<MapManager>().GetActive() != true)
+            else// if (m_Map[i].GetComponent<MapManager>().GetActive() != true)
             {
-                //m_Map[i].GetComponent<MapManager>().SetActive(true);
-                if (m_Map[i].GetComponent<MapManager>().GetMoving())
-                {
-                    //m_Map[i].GetComponent<MapManager>().SetPos(new Vector3(0.0f, 0.0f, 0.0f));
-                }
+                m_Map[i].GetComponent<MapManager>().SetActive(true);
+                //if (m_Map[i].GetComponent<MapManager>().GetMoving())
+                //{
+                //    //m_Map[i].GetComponent<MapManager>().SetPos(new Vector3(0.0f, 0.0f, 0.0f));
+                //}
             }
         }
+
+
     }
 
 
