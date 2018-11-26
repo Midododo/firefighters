@@ -6,30 +6,37 @@ public class SceneLoader : MonoBehaviour {
 
     //public Fade fade;
     public GameObject fade;
+    private Fade FadeScript;
+
+    private void Start()
+    {
+        FadeScript = GameObject.Find("Fade").GetComponent<Fade>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(FadeScript.IsFading());
         // マウスを左クリックした瞬間
-        if (Input.GetMouseButtonDown(0) == true && fade.GetComponent<Fade>().IsFading() == false)
+        if (Input.GetMouseButtonDown(0) == true && FadeScript.IsFading() == false)
         {
             // Unityバージョン 5.3以降
             //SceneManager.LoadScene("Game");
             if (SceneManager.GetActiveScene().name == "Title")
             {
-                fade.GetComponent<Fade>().SetFadeOutFlag("Tutorial");
+                FadeScript.SetFadeOutFlag("Tutorial");
             }
             else if (SceneManager.GetActiveScene().name == "Tutorial")
             {
-                fade.GetComponent<Fade>().SetFadeOutFlag("Game");
+                FadeScript.SetFadeOutFlag("Game");
             }
             else if (SceneManager.GetActiveScene().name == "Game")
             {
-                fade.GetComponent<Fade>().SetFadeOutFlag("Result");
+                FadeScript.SetFadeOutFlag("Result");
             }
             else if (SceneManager.GetActiveScene().name == "Result")
             {
-                fade.GetComponent<Fade>().SetFadeOutFlag("Title");
+                FadeScript.SetFadeOutFlag("Title");
             }
         }
     }

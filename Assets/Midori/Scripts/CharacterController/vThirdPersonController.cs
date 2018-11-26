@@ -30,13 +30,18 @@ namespace Invector.CharacterController
             // return if jumpCondigions is false
             if (!jumpConditions) return;
             // trigger jump behaviour
-            jumpCounter = jumpTimer;            
+            jumpCounter = jumpTimer;
             isJumping = true;
             // trigger jump animations            
             if (_rigidbody.velocity.magnitude < 1)
                 animator.CrossFadeInFixedTime("Jump", 0.1f);
             else
                 animator.CrossFadeInFixedTime("JumpMove", 0.2f);
+        }
+
+        public virtual void Splash(bool value)
+        {
+            isSplashing = value;
         }
 
         public virtual void RotateWithAnotherTransform(Transform referenceTransform)
