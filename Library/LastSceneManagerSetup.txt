@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Title.unity
-=======
-- path: Assets/Mukai/Scenes/TutrialM.unity
->>>>>>> remotes/origin/Mukai2
+- path: Assets/Scenes/Game.unity
   isLoaded: 1
   isActive: 1
