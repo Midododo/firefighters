@@ -14,12 +14,9 @@ public class TrialManager : MonoBehaviour
     public GameObject prefab_Player;
     public GameObject ui;
 
-    public GameObject prefab_FireRing;
-
     private GameObject m_Map;
     private GameObject m_Player;
 
-    private GameObject m_Fire;
 
 
 
