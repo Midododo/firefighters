@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Kawai/Scenes/Trial.unity
+=======
+- path: Assets/Scenes/Tutorial.unity
+>>>>>>> 0799e1fe2125b1d8d8b14091fd521b9127a04028
   isLoaded: 1
   isActive: 1

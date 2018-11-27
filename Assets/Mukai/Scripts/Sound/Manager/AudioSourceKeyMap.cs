@@ -7,5 +7,8 @@ public enum AudioKey
 	GameBGM_OFF,
 	GameBGM_ON,
 	Push,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0799e1fe2125b1d8d8b14091fd521b9127a04028
 }

@@ -58,7 +58,15 @@ public class Player : MonoBehaviour {
         {
             if (m_Guage < m_GuageMax)
             {
-                m_Guage += m_GuageFillValue;
+                //m_Guage += m_GuageFillValue;
+                if (this.tag == "Player1")
+                {
+                    GameObject.Find("Nakami_Left").GetComponent<Gage>().SetGaugePoint(m_GuageFillValue);
+                }
+                else
+                {
+                    GameObject.Find("Nakami_Right").GetComponent<Gage>().SetGaugePoint(m_GuageFillValue);
+                }
             }
             else
             {

@@ -50,6 +50,8 @@ public class Manager : MonoBehaviour
 
         GameCanvas = Instantiate(prefab_GameCanvas, this.transform.position, transform.rotation);
 
+        m_Player[0].GetComponent<Player>().m_Input = m_Player[1].GetComponent<Player>().m_Input = gameObject;// プレイヤー二ジョイコンのインプット情報の場所を教える
+
         //int count = 0;
         //foreach (Transform child in prefab_GameCanvas.transform)
         //{
