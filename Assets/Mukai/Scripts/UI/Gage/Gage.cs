@@ -6,12 +6,12 @@ using UnityEngine;
 public class Gage : MonoBehaviour
 {
     [SerializeField]
-    private int GAGE_MAX = 100;
+    private float GAGE_MAX = 100;
     [SerializeField]
-    private int GAGE_MIN = 0;
+    private float GAGE_MIN = 0;
 
-    public int point;
-    int pre_point;
+    public float point;
+    float pre_point;
     private float ratio;
     private Image gage;
     int type;
@@ -55,7 +55,7 @@ public class Gage : MonoBehaviour
     }
 
 
-    private float ConvertPoint(int value)
+    private float ConvertPoint(float value)
     {
         ratio = ((float)value / 100.00f);
         return ratio;
@@ -64,5 +64,16 @@ public class Gage : MonoBehaviour
     public int  CheckPoint()
     {
         return type;
+    }
+
+    public float GetGaugePoint()
+    {
+        return point;
+    }
+
+    public void SetGaugePoint(float Value)
+    {
+        point += Value;
+        Debug.Log(point);
     }
 }

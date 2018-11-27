@@ -60,17 +60,17 @@ public class ParticleController : MonoBehaviour
             MainSystem.startColor = color;
         }
 
-
         //　イベントの取得
         //particle.GetCollisionEvents(other, collisionEvents);
-        List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
-        particle.GetCollisionEvents(other, collisionEvents);
+        //List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+        //particle.GetCollisionEvents(other, collisionEvents);
 
-        //　衝突した位置を取得し、ダメージスクリプトを呼び出す
-        foreach (var colEvent in collisionEvents)
-        {
-            Vector3 pos = colEvent.intersection;
-            //colEvent.colliderComponent.gameObject.SetActive(false);
+        ////　衝突した位置を取得し、ダメージスクリプトを呼び出す
+        //foreach (var colEvent in collisionEvents)
+        //{
+        //    Debug.Log("out");
+        //    Vector3 pos = colEvent.intersection;
+        //    colEvent.colliderComponent.gameObject.SetActive(false);
 
             //if (m_System == null)
             //    m_System = GetComponent<ParticleSystem>();
@@ -84,46 +84,46 @@ public class ParticleController : MonoBehaviour
             //// Change only the particles that are alive
             //for (int i = 0; i < numParticlesAlive; i++)
             //{
+            ////m_Particles[i].velocity += Vector3.up * m_Drift;
+            //if (m_Particles[i].velocity.x < 0.0f && m_Particles[i].velocity.y < 0.0f && m_Particles[i].velocity.z < 0.0f)
+            //    m_Particles[i].startColor = new Color32(0, 0, 0, 0);
 
-            //    m_Particles[i].velocity += Vector3.up * m_Drift;
-            //    //m_Particles[i].startColor = new Color32(0, 0, 0, 0); 
             //}
 
             //// Apply the particle changes to the particle system
             //m_System.SetParticles(m_Particles, numParticlesAlive);
-        }
+        //}
     }
 
     void OnParticleTrigger()
     {
         //Debug.Log("unko");
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+
+        // particles
+        List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
+        List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
+
+        // get
+        int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+        int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
+
+        // iterate
+        for (int i = 0; i < numEnter; i++)
+        {
+            ParticleSystem.Particle p = enter[i];
+            p.startColor = new Color32(0, 0, 0, 0);
+            enter[i] = p;
+        }
+        for (int i = 0; i < numExit; i++)
+        {
+            ParticleSystem.Particle p = exit[i];
+            p.startColor = new Color32(0, 0, 0, 0);
+            exit[i] = p;
+        }
+
+        // set
+        ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+        ps.SetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
     }
-    //    ParticleSystem ps = GetComponent<ParticleSystem>();
-
-    //    // particles
-    //    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
-    //    List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
-
-    //    // get
-    //    int numEnter = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
-    //    int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
-
-    //    // iterate
-    //    for (int i = 0; i < numEnter; i++)
-    //    {
-    //        ParticleSystem.Particle p = enter[i];
-    //        p.startColor = new Color32(255, 0, 0, 255);
-    //        enter[i] = p;
-    //    }
-    //    for (int i = 0; i < numExit; i++)
-    //    {
-    //        ParticleSystem.Particle p = exit[i];
-    //        p.startColor = new Color32(0, 255, 0, 255);
-    //        exit[i] = p;
-    //    }
-
-    //    // set
-    //    ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
-    //    ps.SetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
-    //}
 }

@@ -16,6 +16,8 @@ namespace Invector.CharacterController
         [SerializeField]
         float PlayerOffsetY = 0.5f;
 
+        public float DecreaseGaugePoint = -0.1f;
+
         // Use this for initialization
         void Start()
         {
@@ -32,8 +34,6 @@ namespace Invector.CharacterController
             Vector3 Position = parentPlayer.transform.position;
             Position.y += PlayerOffsetY;
             particle.transform.position = Position;
-
-            Debug.Log(parentPlayer.name + "a");
         }
 
         // Update is called once per frame
@@ -42,16 +42,17 @@ namespace Invector.CharacterController
             // 放射中かどうかの確認
             bool IsSplash = parentPlayer.GetComponent<vThirdPersonController>().GetIsSplashing;
 
-            if (IsSplash == true)
+            // ゲージの取得
+            float GaugePoint = GameObject.Find("Nakami_Left").GetComponent<Gage>().GetGaugePoint();
+            string PlayerTag = parentPlayer.tag;
+
+            if (IsSplash == true && GaugePoint > 0.0f)
             {
                 if (particle.isStopped || particle.isPaused)
                 {
                     particle.Simulate(1.0f, true, true);
 
                     particle.Play();
-
-                    Debug.Log("aaaaaaa");
-
                 }
             }
             else
@@ -69,6 +70,14 @@ namespace Invector.CharacterController
                 particle.transform.position = Position;
                 //particle.transform.position = new Vector3(Position.x, Position.y, Position.z);
 
+                if (PlayerTag == "Player1")
+                {
+                    GameObject.Find("Nakami_Left").GetComponent<Gage>().SetGaugePoint(DecreaseGaugePoint);
+                }
+                else
+                {
+                    GameObject.Find("Nakami_Right").GetComponent<Gage>().SetGaugePoint(DecreaseGaugePoint);
+                }
 
                 //if (m_System == null)
                 //    m_System = GetComponent<ParticleSystem>();

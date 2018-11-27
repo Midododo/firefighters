@@ -24,10 +24,12 @@ public class TutorialManager : MonoBehaviour {
 
     private GameObject m_Fire;
 
-
+    private Fade FadeScript;
 
     void Awake()
     {
+        FadeScript = GameObject.Find("Fade").GetComponent<Fade>();
+
         m_Player = new GameObject[Player_Num];
 
         // マップの生成
@@ -58,6 +60,9 @@ public class TutorialManager : MonoBehaviour {
 
     public void ExitEvent()
     {
-
+        if (FadeScript.IsFading() == false)
+        {
+            FadeScript.SetFadeOutFlag("Game");
+        }
     }
 }

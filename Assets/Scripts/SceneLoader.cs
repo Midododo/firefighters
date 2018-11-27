@@ -16,7 +16,6 @@ public class SceneLoader : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(FadeScript.IsFading());
         // マウスを左クリックした瞬間
         if (Input.GetMouseButtonDown(0) == true && FadeScript.IsFading() == false)
         {
