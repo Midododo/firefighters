@@ -5,6 +5,7 @@ using System.Collections;
 public class PushLogoController : MonoBehaviour
 {
     private bool fade = false;
+    private bool fade_out = false;
     private bool push = false;
 
     private Fade FadeScript;
@@ -12,7 +13,7 @@ public class PushLogoController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SoundManager.Instance.Play(AudioKey.TitleBGM);
+        //SoundManager.Instance.Play(AudioKey.TitleBGM);
         FadeScript = GameObject.Find("Fade").GetComponent<Fade>();
     }
 
@@ -21,10 +22,10 @@ public class PushLogoController : MonoBehaviour
     {
         if (fade)
         {
-            // 何かボタンを押したときの処理
+            // 何かボタンを押したときのアクション(いまはスペース)
             if (Input.GetKeyDown(KeyCode.Space))
             {   
-                if (!push)
+                if (!push)      // 一階も押されていなかったときのみ反応
                 {
                     if (gameObject.GetComponent<AlphaChanger>().enabled)
                     {
@@ -41,9 +42,10 @@ public class PushLogoController : MonoBehaviour
             // 点滅アニメーションが終了したら
             else if (gameObject.GetComponent<Blinker>().Count == gameObject.GetComponent<Blinker>().cnt)
             {
-                if(FadeScript.IsFading() == false)
+                if(!FadeScript.IsFading())
                 {
                     FadeScript.SetFadeOutFlag("Tutorial");
+                    // ここで止めるかチュートリアルで止めるか検討中
                     SoundManager.Instance.Stop(AudioKey.TitleBGM);
                 }
             }
