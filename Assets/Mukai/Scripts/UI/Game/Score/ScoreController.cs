@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    public static int point;
+    public static int point;            // ポイント
 
-    private Text scoretext;
+    private Text scoretext;             // テキスト文字
 
     // Use this for initialization
     void Start ()
@@ -19,16 +19,12 @@ public class ScoreController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            AddScore(20);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            SubScore(20);
-        }
+
     }
 
+    //******************************************************************
+    // ・ 他スクリプトからのアクセス用関数
+    //******************************************************************
     public void AddScore(int addpoint)
     {
         point += addpoint;
@@ -41,5 +37,13 @@ public class ScoreController : MonoBehaviour
         scoretext.text = point.ToString();
     }
 
-
+    //// テスト
+    //if (Input.GetKey(KeyCode.UpArrow))
+    //{
+    //    AddScore(20);
+    //}
+    //if (Input.GetKey(KeyCode.DownArrow))
+    //{
+    //    SubScore(20);
+    //}
 }
