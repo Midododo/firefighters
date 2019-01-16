@@ -19,14 +19,14 @@ public class GameUIController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //テスト
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Resucue.AddPoint();
-        }
-        // テスト
-        if (Input.GetKeyDown(KeyCode.W)) Type.type_right.ChangeWaterType();
-        if (Input.GetKeyDown(KeyCode.S)) Type.type_left.ChangeWaterType();
+        ////テスト
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Resucue.AddPoint();
+        //}
+        //// テスト
+        //if (Input.GetKeyDown(KeyCode.W)) Type.type_right.ChangeWaterType();
+        //if (Input.GetKeyDown(KeyCode.S)) Type.type_left.ChangeWaterType();
 
     }
 }
