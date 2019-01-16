@@ -10,7 +10,6 @@ public class TextBlinker : MonoBehaviour
 
     private bool flash = true;
     private bool flag = true;
-    private int count = 0;
 
 
     // 点滅コルーチンを開始する
@@ -27,27 +26,14 @@ public class TextBlinker : MonoBehaviour
             yield return new WaitForSeconds(f_interval);
             if (flag)
             {
-                gameObject.GetComponent<Text>().color = new Color(252.0f, 255.0f, 182.0f, 0.0f);
+                gameObject.GetComponent<Text>().color = new Color(252.0f / 255.0f, 255.0f / 255.0f, 182.0f / 255.0f, 0.0f);
                 flag = !flag;
             }
             else if (!flag)
             {
-                gameObject.GetComponent<Text>().color = new Color(252.0f, 255.0f, 182.0f, 1.0f);
+                gameObject.GetComponent<Text>().color = new Color(252.0f / 255.0f, 255.0f / 255.0f, 182.0f / 255.0f, 1.0f);
                 flag = !flag;
-                count++;
             }
-            //if (count == cnt)
-            //{
-            //    flash = false;
-            //    gameObject.GetComponent<Text>().color = new Color(252.0f, 255.0f, 182.0f, 1.0f);
-            //    gameObject.GetComponent<TextBlinker>().enabled = false;
-
-            //}
         }
-    }
-
-    public int Count
-    {
-        get { return this.count; }  //取得用
     }
 }
