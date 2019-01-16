@@ -104,12 +104,19 @@ namespace Invector.CharacterController
         [HideInInspector]
         public bool
             isJumping,
-            isSplashing;
+            isSplashing,
+            isSpreading;
 
         public bool GetIsSplashing
         {
-            get{ return this.isSplashing; }
+            get { return this.isSplashing; }
         }
+
+        public bool GetIsSpreading
+        {
+            get { return this.isSpreading; }
+        }
+
         protected void RemoveComponents()
         {
             if (_capsuleCollider != null) Destroy(_capsuleCollider);
@@ -196,6 +203,8 @@ namespace Invector.CharacterController
 
             // capsule collider info
             _capsuleCollider = GetComponent<CapsuleCollider>();
+
+            isSprinting = true;
         }
 
         public virtual void UpdateMotor()
@@ -240,7 +249,7 @@ namespace Invector.CharacterController
             speed = Mathf.Abs(input.x) + Mathf.Abs(input.y);            
             speed = Mathf.Clamp(speed, 0, 1f);
             // add 0.5f on sprint to change the animation on animator
-            if (isSprinting) speed += 0.5f;
+            if (isSprinting && speed != 0) speed += 0.5f;
                         
             if (input != Vector2.zero && targetDirection.magnitude > 0.1f)
             {

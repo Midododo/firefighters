@@ -41,28 +41,62 @@ namespace Invector.CharacterController
         {
             // 放射中かどうかの確認
             bool IsSplash = parentPlayer.GetComponent<vThirdPersonController>().GetIsSplashing;
+            bool IsSpread = parentPlayer.GetComponent<vThirdPersonController>().GetIsSpreading;
+
+            float GaugePoint;
 
             // ゲージの取得
-            float GaugePoint = GameObject.Find("Nakami_Left").GetComponent<Gage>().GetGaugePoint();
-            string PlayerTag = parentPlayer.tag;
-
-            if (IsSplash == true && GaugePoint > 0.0f)
+            if (parentPlayer.tag == "Player1")
             {
-                if (particle.isStopped || particle.isPaused)
-                {
-                    particle.Simulate(1.0f, true, true);
-
-                    particle.Play();
-                }
+                GaugePoint = GameObject.Find("Nakami_Left").GetComponent<Gage>().GetGaugePoint();
             }
             else
             {
-                particle.Simulate(0.0f, true, true);
-
-                particle.Stop();
+                GaugePoint = GameObject.Find("Nakami_Right").GetComponent<Gage>().GetGaugePoint();
             }
 
-            if (particle.isStopped == false)
+            string PlayerTag = parentPlayer.tag;
+
+            if (this.name == "Water")
+            {
+                if (IsSplash == true && GaugePoint > 0.0f)
+                {
+                    if (particle.isStopped || particle.isPaused)
+                    {
+                        //particle.Simulate(1.0f, true, true);
+
+                        particle.Play();
+                    }
+                }
+                else
+                {
+                    //particle.Simulate(0.0f, true, true);
+
+                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+            }
+
+            else if (this.name == "SpreadWater")
+            {
+                if (IsSpread == true && GaugePoint > 0.0f)
+                {
+                    if (particle.isStopped || particle.isPaused)
+                    {
+                        //particle.Simulate(1.0f, true, true);
+
+                        particle.Play();
+                    }
+                }
+                else
+                {
+                    //particle.Simulate(0.0f, true, true);
+
+                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+            }
+
+            //if (particle.isStopped == false)
+            if (IsSplash == true || IsSpread == true)
             {
                 // 親の（プレイヤーの）位置にパーティクルを表示
                 Vector3 Position = parentPlayer.transform.position;

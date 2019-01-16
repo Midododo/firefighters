@@ -401,6 +401,8 @@
     <None Include="Assets\Midori\Resources\Effects\JMO Assets\Cartoon FX\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\Midori\Resources\Effects\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\Midori\Resources\Effects\PyroParticles\Readme.txt" />
+    <None Include="Assets\Midori\Resources\Effects\UB\HighEndMobilePostEffects\Shaders\D2Fogs.shader" />
+    <None Include="Assets\Midori\Resources\Effects\UB\HighEndMobilePostEffects\Shaders\D2FogsNoiseTex.shader" />
     <None Include="Assets\Midori\Resources\Models\SimplePhysicalShader\SimplePhysicalShader.shader" />
     <None Include="Assets\Midori\Resources\Models\SimplePhysicalShader\SimplePhysicalShaderCoat.shader" />
     <None Include="Assets\Midori\Resources\Models\SimplePhysicalShader\SimplePhysicalShaderRetro.shader" />

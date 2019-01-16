@@ -26,7 +26,7 @@ public class ParticleController : MonoBehaviour
     {
         //Debug.Log(other.name + "a");
         //Debug.Log(other.tag + "a");
-        Debug.Log(other.layer);
+        //Debug.Log(other.layer);
 
         // オブジェクトとの当たり判定
         if (other.layer == 9)
@@ -40,22 +40,37 @@ public class ParticleController : MonoBehaviour
 
         if (other.tag == "Fire" || other.layer == 31)
         {
+            Debug.Log("aho");
 
             // 現時点のstartColorの設定を取得
-            Color32 colorTemp = other.GetComponent<ParticleSystem>().main.startColor.color;
+            Color colorTemp = other.GetComponent<ParticleSystem>().main.startColor.color;
 
             // αの値を減少
-            float Alpha = colorTemp.a - FireAlphaDecreaseSpeed;
-            if (Alpha < 0.0f)
+            colorTemp.a -= FireAlphaDecreaseSpeed;
+
+            if (colorTemp.a < 0.0f)
             {
-                Alpha = 0.0f;
+                colorTemp.a = 0.0f;
+
                 other.gameObject.SetActive(false);
+
+                //other.transform.root.gameObject.SetActive(false);
+            }
+            else if (colorTemp.a < 0.2f && colorTemp.a > 0)
+            {
+                Smoke_Extinguish SmokeScript;
+                SmokeScript = GameObject.Find("Smoke_Extinguish").GetComponent<Smoke_Extinguish>();
+
+                if(SmokeScript.GetGoSmoke() == 0)
+                {
+                    SmokeScript.SetGoSmoke(1);
+                }
             }
 
             // 反映させる
             ParticleSystem.MinMaxGradient color = new ParticleSystem.MinMaxGradient();
             color.mode = ParticleSystemGradientMode.Color;
-            color.color = new Color32(colorTemp.r, colorTemp.g, colorTemp.b, (byte)Alpha);
+            color.color = new Color(colorTemp.r, colorTemp.g, colorTemp.b, colorTemp.a);
             ParticleSystem.MainModule MainSystem = other.GetComponent<ParticleSystem>().main;
             MainSystem.startColor = color;
         }
@@ -93,6 +108,35 @@ public class ParticleController : MonoBehaviour
             //// Apply the particle changes to the particle system
             //m_System.SetParticles(m_Particles, numParticlesAlive);
         //}
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Fire" || other.gameObject.layer == 31)
+        {
+
+            // 現時点のstartColorの設定を取得
+            Color colorTemp = other.gameObject.GetComponent<ParticleSystem>().main.startColor.color;
+
+            // αの値を減少
+            colorTemp.a -= FireAlphaDecreaseSpeed;
+            if (colorTemp.a < 0.0f)
+            {
+                colorTemp.a = 0.0f;
+                other.gameObject.SetActive(false);
+                other.transform.root.gameObject.SetActive(false);
+            }
+            colorTemp.b -= (byte)FireAlphaDecreaseSpeed;
+            colorTemp.r -= (byte)FireAlphaDecreaseSpeed;
+            colorTemp.g -= (byte)FireAlphaDecreaseSpeed;
+
+            // 反映させる
+            ParticleSystem.MinMaxGradient color = new ParticleSystem.MinMaxGradient();
+            color.mode = ParticleSystemGradientMode.Color;
+            color.color = new Color(colorTemp.r, colorTemp.g, colorTemp.b, colorTemp.a);
+            ParticleSystem.MainModule MainSystem = other.gameObject.GetComponent<ParticleSystem>().main;
+            MainSystem.startColor = color;
+        }
     }
 
     void OnParticleTrigger()

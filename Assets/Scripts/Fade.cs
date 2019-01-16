@@ -60,6 +60,24 @@ public class Fade : MonoBehaviour
         {             // d)完全に不透明になったら処理を抜ける
             alfa = 1;
             isFadeOut = false;
+
+            if(NextScene == "Title")
+            {
+                SoundManager.Instance.Stop(AudioKey.ResultBGM);
+            }
+            else if (NextScene == "Tutorial")
+            {
+                SoundManager.Instance.Stop(AudioKey.TitleBGM);
+            }
+            else if (NextScene == "Game")
+            {
+                SoundManager.Instance.Stop(AudioKey.GameBGM_OFF);
+            }
+            else if (NextScene == "Result")
+            {
+                SoundManager.Instance.Stop(AudioKey.GameBGM_ON);
+            }
+
             SceneManager.LoadScene(NextScene);
             isFadeIn = true;
         }

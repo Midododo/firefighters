@@ -12,7 +12,7 @@ public class PushLogoController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SoundManager.Instance.Play(AudioKey.TitleBGM);
+        //SoundManager.Instance.Play(AudioKey.TitleBGM);
         FadeScript = GameObject.Find("Fade").GetComponent<Fade>();
     }
 
@@ -22,7 +22,7 @@ public class PushLogoController : MonoBehaviour
         if (fade)
         {
             // 何かボタンを押したときの処理
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonDown(0) == true)
             {   
                 if (!push)
                 {

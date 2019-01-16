@@ -14,27 +14,27 @@ public class Player : MonoBehaviour {
     public const float m_GuageMax = 100.0f;
     public float m_ShakeLimiter = 10;
 
-    public float m_MaxVelocity = 20.0f;
+    //public float m_MaxVelocity = 20.0f;
 
-    private Rigidbody m_Rbody;
+    //private Rigidbody m_Rbody;
 
     public GameObject m_Input;
     //public GameObject m_Camera;
 
-    private Vector3 m_OldPos;
+    //private Vector3 m_OldPos;
 
 
 	// Use this for initialization
 	void Awake()
     {
-        m_Rbody = GetComponent<Rigidbody>();
+        //m_Rbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate()
     {
 
-        Move();
+        //Move();
 
         var accelL = m_Input.GetComponent<JoyconInput>().GetAccel(m_PlayerIdx, true);
         var accelR = m_Input.GetComponent<JoyconInput>().GetAccel(m_PlayerIdx, false);
@@ -80,59 +80,59 @@ public class Player : MonoBehaviour {
                 m_Shake = false;
             }
         }
-
+        //Action();
     }
 
 
-    void Action()
-    {
-        if (m_Input.GetComponent<JoyconInput>().GetTrigger(Joycon.Button.DPAD_RIGHT, m_PlayerIdx, false))
-        {
-
-        }
-    }
-
-
-    void Move()
-    {
-
-        Vector2 tVec2 = m_Input.GetComponent<JoyconInput>().GetStick(m_PlayerIdx, true);
-        Vector2 tVec2Right = m_Input.GetComponent<JoyconInput>().GetStick(m_PlayerIdx, false);
-
-        if (tVec2.magnitude == 0.0f && tVec2Right.magnitude == 0.0f)
-        {
-            m_Rbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-            return;
-        }
-
-        float tStickAng = 0.0f;
-        if (tVec2.magnitude != 0.0f)
-        {
-            tStickAng = Mathf.Atan2(tVec2.y, tVec2.x);
-        }
-        else
-        {
-            tStickAng = Mathf.Atan2(tVec2Right.y, tVec2Right.x);
-        }
-        //float tCamAng = Mathf.Atan2(m_Camera.transform.position.z, m_Camera.transform.position.x);
-
-        //tVec2.x = Mathf.Cos(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
-        //tVec2.y = Mathf.Sin(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
-        tVec2.x = Mathf.Cos(tStickAng) * m_MaxVelocity;
-        tVec2.y = Mathf.Sin(tStickAng) * m_MaxVelocity;
+    //void Action()
+    //{
+    //    if (m_Input.GetComponent<JoyconInput>().GetTrigger(Joycon.Button.DPAD_RIGHT, m_PlayerIdx, false))
+    //    {
+    //        Debug.Log("s");
+    //    }
+    //}
 
 
-        m_OldPos = transform.position;
+    //void Move()
+    //{
 
-        //transform.position += new Vector3(tVec2.x, 0.0f, tVec2.y) * Time.deltaTime;
+    //    Vector2 tVec2 = m_Input.GetComponent<JoyconInput>().GetStick(m_PlayerIdx, true);
+    //    Vector2 tVec2Right = m_Input.GetComponent<JoyconInput>().GetStick(m_PlayerIdx, false);
+
+    //    if (tVec2.magnitude == 0.0f && tVec2Right.magnitude == 0.0f)
+    //    {
+    //        m_Rbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+    //        return;
+    //    }
+
+    //    float tStickAng = 0.0f;
+    //    if (tVec2.magnitude != 0.0f)
+    //    {
+    //        tStickAng = Mathf.Atan2(tVec2.y, tVec2.x);
+    //    }
+    //    else
+    //    {
+    //        tStickAng = Mathf.Atan2(tVec2Right.y, tVec2Right.x);
+    //    }
+    //    //float tCamAng = Mathf.Atan2(m_Camera.transform.position.z, m_Camera.transform.position.x);
+
+    //    //tVec2.x = Mathf.Cos(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
+    //    //tVec2.y = Mathf.Sin(tStickAng - m_Camera.transform.rotation.y) * m_MaxVelocity;
+    //    tVec2.x = Mathf.Cos(tStickAng) * m_MaxVelocity;
+    //    tVec2.y = Mathf.Sin(tStickAng) * m_MaxVelocity;
 
 
-        //transform.Translate(new Vector3(tVec2.x, 0.0f, tVec2.y));
-        //m_Rbody.AddForce(new Vector3(tVec2.x, 0.0f, tVec2.y));
-        m_Rbody.velocity = new Vector3(tVec2.x, 0.0f, tVec2.y) * Time.deltaTime;
-        //m_Rbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+    //    m_OldPos = transform.position;
 
-    }
+    //    //transform.position += new Vector3(tVec2.x, 0.0f, tVec2.y) * Time.deltaTime;
+
+
+    //    //transform.Translate(new Vector3(tVec2.x, 0.0f, tVec2.y));
+    //    //m_Rbody.AddForce(new Vector3(tVec2.x, 0.0f, tVec2.y));
+    //    m_Rbody.velocity = new Vector3(tVec2.x, 0.0f, tVec2.y) * Time.deltaTime;
+    //    //m_Rbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+    //}
 
 
     public float GetGuageValue()
@@ -141,73 +141,73 @@ public class Player : MonoBehaviour {
     }
 
 
-    void DebugMove()
-    {
-        var tVec = new Vector3(0.0f, 0.0f, 0.0f);
-        if(Input.GetKey(KeyCode.UpArrow))
-        {
-            tVec.z += m_MaxVelocity;
-        }
-        transform.position += tVec;
-    }
+    //void DebugMove()
+    //{
+    //    var tVec = new Vector3(0.0f, 0.0f, 0.0f);
+    //    if(Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        tVec.z += m_MaxVelocity;
+    //    }
+    //    transform.position += tVec;
+    //}
 
 
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.name == "Ground")
-        { return; }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.collider.name == "Ground")
+    //    { return; }
 
-        print(gameObject.name + collision.collider.name + "enter");
+    //    print(gameObject.name + collision.collider.name + "enter");
 
-        Vector3 tVec3 = new Vector3(0.0f, 0.0f, 0.0f);
+    //    Vector3 tVec3 = new Vector3(0.0f, 0.0f, 0.0f);
 
-        foreach (ContactPoint contact in collision.contacts)
-        {
+    //    foreach (ContactPoint contact in collision.contacts)
+    //    {
 
-            //Debug.DrawRay(contact.point, contact.normal, Color.white);
-            tVec3 = contact.point;
-        }
+    //        //Debug.DrawRay(contact.point, contact.normal, Color.white);
+    //        tVec3 = contact.point;
+    //    }
 
-        //transform.position = tVec3;
-    }
+    //    //transform.position = tVec3;
+    //}
 
-    void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.name == "Ground")
-        { return; }
+    //void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.collider.name == "Ground")
+    //    { return; }
 
-        print(gameObject.name + collision.collider.name + "stay");
-        foreach (ContactPoint contact in collision.contacts)
-        {
+    //    print(gameObject.name + collision.collider.name + "stay");
+    //    foreach (ContactPoint contact in collision.contacts)
+    //    {
 
-            //Debug.DrawRay(contact.point, contact.normal, Color.white);
-            //transform.position = contact.point + contact.normal;
+    //        //Debug.DrawRay(contact.point, contact.normal, Color.white);
+    //        //transform.position = contact.point + contact.normal;
 
-        }
+    //    }
 
-        //transform.position = m_OldPos;
-        //transform.position = m_OldPos;// + (transform.position - collisionInfo.collider.ClosestPoint(transform.position));
+    //    //transform.position = m_OldPos;
+    //    //transform.position = m_OldPos;// + (transform.position - collisionInfo.collider.ClosestPoint(transform.position));
 
-    }
+    //}
 
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.name == "Ground")
-        { return; }
+    //void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.collider.name == "Ground")
+    //    { return; }
 
-        print(gameObject.name + collision.collider.name + "exit");
+    //    print(gameObject.name + collision.collider.name + "exit");
 
-    }
+    //}
 
-    public void OnTriggerEnter(Collider Collider)
-    {
-        var hitObject = Collider.gameObject.name;
-        print("I collided with the " + hitObject + " !");
+    //public void OnTriggerEnter(Collider Collider)
+    //{
+    //    var hitObject = Collider.gameObject.name;
+    //    print("I collided with the " + hitObject + " !");
 
-        if (Collider.gameObject.name == "evAoE(Clone)")
-        {
-            print("fuck this nigga gay");
-        }
-    }
+    //    if (Collider.gameObject.name == "evAoE(Clone)")
+    //    {
+    //        print("fuck this nigga gay");
+    //    }
+    //}
 }
