@@ -28,8 +28,10 @@ public class PushLogoController : MonoBehaviour
     {
         if (fade)
         {
+            // 何かボタンを押したときの処理
+            if (Input.GetMouseButtonDown(0) == true)
             // 何かボタンを押したときのアクション(いまはスペース)
-            if (Input.GetKeyDown(KeyCode.Space))
+            //if (Input.GetKeyDown(KeyCode.Space))
             {   
                 if (!push)      // 一階も押されていなかったときのみ反応
                 {

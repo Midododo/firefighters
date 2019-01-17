@@ -25,12 +25,16 @@ public class MessageController : MonoBehaviour
     {
         win = GameObject.Find("Window1").GetComponent<MessageWindow>();
         num = 1;
+        ShowWindow();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.I))
+            ShowWindow();
+        if (Input.GetKeyDown(KeyCode.O))
+            DeleteWindow();
     }
 
     //******************************************************************

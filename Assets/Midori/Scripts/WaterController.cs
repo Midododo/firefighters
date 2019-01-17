@@ -16,6 +16,8 @@ namespace Invector.CharacterController
         [SerializeField]
         float PlayerOffsetY = 0.5f;
 
+        public float DecreaseGaugePoint = -0.1f;
+
         // Use this for initialization
         void Start()
         {
@@ -32,8 +34,6 @@ namespace Invector.CharacterController
             Vector3 Position = parentPlayer.transform.position;
             Position.y += PlayerOffsetY;
             particle.transform.position = Position;
-
-            Debug.Log(parentPlayer.name + "a");
         }
 
         // Update is called once per frame
@@ -41,27 +41,62 @@ namespace Invector.CharacterController
         {
             // 放射中かどうかの確認
             bool IsSplash = parentPlayer.GetComponent<vThirdPersonController>().GetIsSplashing;
+            bool IsSpread = parentPlayer.GetComponent<vThirdPersonController>().GetIsSpreading;
 
-            if (IsSplash == true)
+            float GaugePoint;
+
+            // ゲージの取得
+            if (parentPlayer.tag == "Player1")
             {
-                if (particle.isStopped || particle.isPaused)
-                {
-                    particle.Simulate(1.0f, true, true);
-
-                    particle.Play();
-
-                    Debug.Log("aaaaaaa");
-
-                }
+                GaugePoint = GameObject.Find("Nakami_Left").GetComponent<Gage>().GetGaugePoint();
             }
             else
             {
-                particle.Simulate(0.0f, true, true);
-
-                particle.Stop();
+                GaugePoint = GameObject.Find("Nakami_Right").GetComponent<Gage>().GetGaugePoint();
             }
 
-            if (particle.isStopped == false)
+            string PlayerTag = parentPlayer.tag;
+
+            if (this.name == "Water")
+            {
+                if (IsSplash == true && GaugePoint > 0.0f)
+                {
+                    if (particle.isStopped || particle.isPaused)
+                    {
+                        //particle.Simulate(1.0f, true, true);
+
+                        particle.Play();
+                    }
+                }
+                else
+                {
+                    //particle.Simulate(0.0f, true, true);
+
+                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+            }
+
+            else if (this.name == "SpreadWater")
+            {
+                if (IsSpread == true && GaugePoint > 0.0f)
+                {
+                    if (particle.isStopped || particle.isPaused)
+                    {
+                        //particle.Simulate(1.0f, true, true);
+
+                        particle.Play();
+                    }
+                }
+                else
+                {
+                    //particle.Simulate(0.0f, true, true);
+
+                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+            }
+
+            //if (particle.isStopped == false)
+            if (IsSplash == true || IsSpread == true)
             {
                 // 親の（プレイヤーの）位置にパーティクルを表示
                 Vector3 Position = parentPlayer.transform.position;
@@ -69,6 +104,14 @@ namespace Invector.CharacterController
                 particle.transform.position = Position;
                 //particle.transform.position = new Vector3(Position.x, Position.y, Position.z);
 
+                if (PlayerTag == "Player1")
+                {
+                    GameObject.Find("Nakami_Left").GetComponent<Gage>().SetGaugePoint(DecreaseGaugePoint);
+                }
+                else
+                {
+                    GameObject.Find("Nakami_Right").GetComponent<Gage>().SetGaugePoint(DecreaseGaugePoint);
+                }
 
                 //if (m_System == null)
                 //    m_System = GetComponent<ParticleSystem>();

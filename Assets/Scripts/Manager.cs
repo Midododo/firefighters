@@ -5,7 +5,7 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public int m_MapData = 1;
-    public int m_FloorCnt = 2;
+    public int m_FloorCnt = 1;
     public int m_CurrentFloor = 1;
     private int m_MapScaleX = 5;
     private int m_MapScaleZ = 5;
@@ -29,26 +29,31 @@ public class Manager : MonoBehaviour
         m_Map = new GameObject[m_FloorCnt];
 
         m_Map[0] = Instantiate(prefab_Map);
-        m_Map[1] = Instantiate(prefab_Map);
+        //m_Map[1] = Instantiate(prefab_Map);
 
         m_Map[0].GetComponent<MapManager>().Create(m_MapData);
-        m_Map[1].GetComponent<MapManager>().Create(0);
+        //m_Map[1].GetComponent<MapManager>().Create(1);
 
         m_Map[0].GetComponent<MapManager>().SetVisibility(true);
-        m_Map[1].GetComponent<MapManager>().SetVisibility(false);
+        //m_Map[1].GetComponent<MapManager>().SetVisibility(false);
 
-        m_Map[1].GetComponent<MapManager>().MoveFloorDown();
+        //m_Map[1].GetComponent<MapManager>().MoveFloorDown();
 
         m_Player = new GameObject[Player_Num];
 
         m_Player[0] = Instantiate(prefab_Player, this.transform.position, transform.rotation);
         m_Player[0].tag = "Player1";
+        m_Player[0].GetComponent<Player>().m_PlayerIdx = 0;
         m_Player[1] = Instantiate(prefab_Player, this.transform.position, transform.rotation);
         m_Player[1].tag = "Player2";
+        m_Player[1].GetComponent<Player>().m_PlayerIdx = 1;
         GameObject.Find("CameraRig").GetComponent<CameraController2>().SetCamera(m_Player[0], 0);
         GameObject.Find("CameraRig").GetComponent<CameraController2>().SetCamera(m_Player[1], 1);
 
         GameCanvas = Instantiate(prefab_GameCanvas, this.transform.position, transform.rotation);
+
+        m_Player[0].GetComponent<Player>().m_Input = gameObject;
+        m_Player[1].GetComponent<Player>().m_Input = gameObject;// プレイヤー二ジョイコンのインプット情報の場所を教える
 
         //int count = 0;
         //foreach (Transform child in prefab_GameCanvas.transform)
@@ -77,7 +82,7 @@ public class Manager : MonoBehaviour
         {
             if (!m_Map[0].GetComponent<MapManager>().GetMoving()) // map 0 will always exist
             {
-                MoveFloorUp();
+                //MoveFloorUp();
             }
         }
 
@@ -85,7 +90,7 @@ public class Manager : MonoBehaviour
         {
             if (!m_Map[0].GetComponent<MapManager>().GetMoving()) // map 0 will always exist
             {
-                MoveFloorDown();
+                //MoveFloorDown();
             }
         }
 
