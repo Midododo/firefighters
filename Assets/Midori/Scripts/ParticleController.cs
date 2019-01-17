@@ -12,17 +12,22 @@ public class ParticleController : MonoBehaviour
     [SerializeField]
     float FireAlphaDecreaseSpeed = 0.001f;
 
-
     private ParticleSystem particle;
     //private ParticleCollisionEvent[] collisionEvents;
+
+    private ScoreController score;
+    public int ScoreAddNum = 100;
 
     private void Start()
     {
         particle = GetComponent<ParticleSystem>();
         //collisionEvents = new ParticleCollisionEvent[10];
+
+        if(this.gameObject.scene.name == "Game")
+        score = GameObject.Find("Score").GetComponent<ScoreController>();
     }
 
-    private void OnParticleCollision(GameObject other)
+    private void OnParticleCollision(GameObject other)  
     {
         //Debug.Log(other.name + "a");
         //Debug.Log(other.tag + "a");
@@ -34,6 +39,15 @@ public class ParticleController : MonoBehaviour
             Debug.Log("箱だよ");
             Vector3 Direction = other.transform.position - this.transform.position;
             Direction.y += 3.0f;
+            Direction *= 2.0f;
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Direction, ForceMode.Impulse);
+        }
+
+        if (other.tag == "Human" || other.layer == 13)
+        {
+            Debug.Log("人だよ");
+            Vector3 Direction = other.transform.position - this.transform.position;
+            Direction.y = 0.0f;
             Direction *= 2.0f;
             other.gameObject.GetComponent<Rigidbody>().AddForce(Direction, ForceMode.Impulse);
         }
@@ -53,6 +67,8 @@ public class ParticleController : MonoBehaviour
                 colorTemp.a = 0.0f;
 
                 other.gameObject.SetActive(false);
+
+                score.AddScore(ScoreAddNum);
 
                 //other.transform.root.gameObject.SetActive(false);
             }

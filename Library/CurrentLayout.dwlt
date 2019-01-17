@@ -13,25 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 12.8
-    y: 32
-    width: 1522
-    height: 766
+    x: 0
+    y: 43.2
+    width: 1536
+    height: 781
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
-=======
-    x: -1920
-    y: 43
-    width: 1920
-    height: 997
-  m_ShowMode: 4
-  m_Title: 
-  m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 471}
->>>>>>> remotes/origin/Mukai2
+  m_MinSize: {x: 950, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -52,15 +41,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1521.6
-    height: 766.4
-  m_MinSize: {x: 950, y: 300}
-=======
-    width: 1920
-    height: 997
-  m_MinSize: {x: 950, y: 471}
->>>>>>> remotes/origin/Mukai2
+    width: 1536
+    height: 781
+  m_MinSize: {x: 950, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -78,7 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1521.6
+    width: 1536
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -98,13 +81,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 746.4
-    width: 1521.6
-=======
-    y: 977
-    width: 1920
->>>>>>> remotes/origin/Mukai2
+    y: 761
+    width: 1536
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -123,30 +101,17 @@ MonoBehaviour:
   - {fileID: 6}
   - {fileID: 9}
   - {fileID: 10}
-<<<<<<< HEAD
   - {fileID: 13}
-=======
-  - {fileID: 11}
->>>>>>> remotes/origin/Mukai2
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
-<<<<<<< HEAD
-    width: 1521.6
-    height: 716.4
-  m_MinSize: {x: 917, y: 421}
-  m_MaxSize: {x: 22012, y: 14042}
+    width: 1536
+    height: 731
+  m_MinSize: {x: 915, y: 442}
+  m_MaxSize: {x: 22010, y: 14042}
   vertical: 0
-  controlID: 24453
-=======
-    width: 1920
-    height: 947
-  m_MinSize: {x: 913, y: 421}
-  m_MaxSize: {x: 22008, y: 10021}
-  vertical: 0
-  controlID: 3061
->>>>>>> remotes/origin/Mukai2
+  controlID: 4255
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,21 +130,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 407
-    height: 716.4
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+    width: 714
+    height: 731
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 24454
-=======
-    width: 894
-    height: 947
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
-  vertical: 1
-  controlID: 3062
->>>>>>> remotes/origin/Mukai2
+  controlID: 4204
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,24 +152,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 407
-    height: 367
+    width: 714
+    height: 375
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-=======
-    width: 894
-    height: 473
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
-  m_Panes:
-  - {fileID: 13}
->>>>>>> remotes/origin/Mukai2
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &8
@@ -231,23 +177,14 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 367
-    width: 407
-    height: 349
+    y: 375
+    width: 714
+    height: 356
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
-=======
-    y: 473
-    width: 894
-    height: 474
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
->>>>>>> remotes/origin/Mukai2
   m_Panes:
-  - {fileID: 12}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -264,27 +201,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 407
+    x: 714
     y: 0
-    width: 210
-    height: 716.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 204
+    height: 731
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
-=======
-    x: 894
-    y: 0
-    width: 221
-    height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
-  m_Panes:
-  - {fileID: 14}
->>>>>>> remotes/origin/Mukai2
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &10
@@ -303,14 +228,14 @@ MonoBehaviour:
   - {fileID: 12}
   m_Position:
     serializedVersion: 2
-    x: 617
+    x: 918
     y: 0
-    width: 383
-    height: 716.4
+    width: 341
+    height: 731
   m_MinSize: {x: 234, y: 392}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 24674
+  controlID: 4411
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,11 +250,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1115
+    x: 0
     y: 0
-<<<<<<< HEAD
-    width: 383
-    height: 477
+    width: 341
+    height: 487
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 18}
@@ -338,19 +262,6 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &12
-=======
-    width: 528
-    height: 947
-  m_MinSize: {x: 234, y: 271}
-  m_MaxSize: {x: 10004, y: 10021}
-  m_ActualView: {fileID: 15}
-  m_Panes:
-  - {fileID: 15}
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
---- !u!114 &11
->>>>>>> remotes/origin/Mukai2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,27 +275,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
     x: 0
-    y: 477
-    width: 383
-    height: 239
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+    y: 487
+    width: 341
+    height: 244
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
-=======
-    x: 1643
-    y: 0
-    width: 277
-    height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 17}
->>>>>>> remotes/origin/Mukai2
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &13
@@ -401,10 +300,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1000
+    x: 1259
     y: 0
-    width: 521
-    height: 716.4
+    width: 277
+    height: 731
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
@@ -432,12 +331,12 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 12.8
-    y: 448
-    width: 405
-    height: 328
+    x: 0
+    y: 467.2
+    width: 712
+    height: 335
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_MaximizeOnPlay: 0
+  m_MaximizeOnPlay: 1
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -447,17 +346,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -162
-    m_HBaseRangeMax: 162
-    m_VBaseRangeMin: -124.4
-    m_VBaseRangeMax: 124.4
+    m_HBaseRangeMin: -284.80002
+    m_HBaseRangeMax: 284.80002
+    m_VBaseRangeMin: -127.200005
+    m_VBaseRangeMax: 127.200005
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -468,25 +367,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 405
-      height: 311
+      width: 712
+      height: 318
     m_Scale: {x: 1.25, y: 1.25}
-    m_Translation: {x: 202.5, y: 155.5}
+    m_Translation: {x: 356, y: 159}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -162
-      y: -124.4
-      width: 324
-      height: 248.8
+      x: -284.8
+      y: -127.2
+      width: 569.6
+      height: 254.4
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 506.25, y: 410}
+  m_LastWindowPixelSize: {x: 890, y: 418.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -511,203 +410,20 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 12.8
-    y: 81.6
-    width: 405
-    height: 346
-  m_PersistentViewDataDictionary: {fileID: 0}
-  m_SceneLighting: 1
-  lastFramingTime: 8770.313943899999
-  m_2DMode: 0
-  m_isRotationLocked: 0
-  m_AudioPlay: 0
-  m_Position:
-    m_Target: {x: 14.891268, y: 0.6415926, z: 8.52859}
-    speed: 2
-    m_Value: {x: 14.891268, y: 0.6415926, z: 8.52859}
-  m_RenderMode: 0
-  m_CameraMode:
-    drawMode: 0
-    name: Shaded
-    section: Shading Mode
-  m_ValidateTrueMetals: 0
-  m_SceneViewState:
-    showFog: 1
-    showMaterialUpdate: 0
-    showSkybox: 1
-    showFlares: 1
-    showImageEffects: 1
-    showParticleSystems: 1
-  grid:
-    xGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-  m_Rotation:
-    m_Target: {x: -0.12149715, y: 0.013992075, z: -0.0017129851, w: -0.992494}
-    speed: 2
-    m_Value: {x: -0.12149687, y: 0.013992043, z: -0.0017129813, w: -0.9924917}
-  m_Size:
-    m_Target: 56.472767
-    speed: 2
-    m_Value: 56.472767
-  m_Ortho:
-    m_Target: 0
-    speed: 2
-    m_Value: 0
-  m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_LastSceneViewOrtho: 0
-  m_ReplacementShader: {fileID: 0}
-  m_ReplacementString: 
-  m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 2048, y: 2048}
-  m_TitleContent:
-    m_Text: Asset Store
-    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
     x: 0
     y: 92.8
-    width: 408
+    width: 712
     height: 354
   m_PersistentViewDataDictionary: {fileID: 0}
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: -1920
-    y: 565
-    width: 892
-    height: 453
-  m_PersistentViewDataDictionary: {fileID: 0}
-  m_MaximizeOnPlay: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_TargetDisplay: 0
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    hZoomLockedByDefault: 0
-    vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -446
-    m_HBaseRangeMax: 446
-    m_VBaseRangeMin: -218
-    m_VBaseRangeMax: 218
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
-    m_EnableSliderZoomHorizontal: 0
-    m_EnableSliderZoomVertical: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 17
-      width: 892
-      height: 436
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 446, y: 218}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -446
-      y: -218
-      width: 892
-      height: 436
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_TargetTexture: {fileID: 0}
-  m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 892, y: 453}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000100000100
-  m_XRRenderMode: 0
---- !u!114 &13
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Scene
-    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: -1920
-    y: 92
-    width: 892
-    height: 452
-  m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 3874.637591191072
+  lastFramingTime: 29564.5958651
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 47.962173, y: -11.77989, z: 90}
+    m_Target: {x: 0.5438215, y: -3.5121813, z: 2.197167}
     speed: 2
-    m_Value: {x: 47.962173, y: -11.77989, z: 90}
+    m_Value: {x: 0.5438215, y: -3.5121813, z: 2.197167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -739,9 +455,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 202.46635
+    m_Target: 31.44301
     speed: 2
-    m_Value: 202.46635
+    m_Value: 31.44301
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -753,7 +469,32 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &14
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 400, y: 100}
+  m_MaxSize: {x: 2048, y: 2048}
+  m_TitleContent:
+    m_Text: Asset Store
+    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 92.8
+    width: 712
+    height: 354
+  m_PersistentViewDataDictionary: {fileID: 0}
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -773,61 +514,40 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 422.4
-    y: 81.6
-    width: 206
-    height: 695.4
+    x: 716.8
+    y: 92.8
+    width: 200
+    height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 440e0000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e0cca2ff128dbaff5261bcff10a1bffff076c0ff0477c0ff7e79c1ffa881c1ff2edfc1ff7a33ccffe868cdfff868cdff2a59cefffa68ceffac73ceffe428d0ffe033d0ff1e40d0ff825bd9ffc4d7deffc6d7deff50a5e4ff00cde5ffe4f6edfff6fbedffa6fcedff0432f9ff1032f9ffb432f9ff924ff9ff366bffff546bffff726bffff966bffff346cffffe6fbffff00000000
-=======
-    x: -1024
-    y: 92
-    width: 217
-    height: 926
-  m_PersistentViewDataDictionary: {fileID: 0}
-  m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 223e0000
-    m_LastClickedID: 15906
-    m_ExpandedIDs: e6fbffff00000000fa3d0000223e00003c3e0000543e0000643e0000743e0000843e00008c3e0000
->>>>>>> remotes/origin/Mukai2
+    m_ExpandedIDs: 3afbfeff80fbfeffe844ffffcac9ffff42caffff8eeeffffe6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 2nd
-      m_OriginalName: 2nd
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15932
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ExpandedScenes:
-<<<<<<< HEAD
-  - Tutorial
-=======
-  - ResultM
->>>>>>> remotes/origin/Mukai2
+  - Game
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
   m_CurrentSortingName: TransformSorting
-<<<<<<< HEAD
 --- !u!114 &18
-=======
---- !u!114 &15
->>>>>>> remotes/origin/Mukai2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -847,17 +567,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 632
-    y: 81.6
-    width: 379
-    height: 456
-=======
-    x: -803
-    y: 92
-    width: 524
-    height: 926
->>>>>>> remotes/origin/Mukai2
+    x: 920.8
+    y: 92.8
+    width: 337
+    height: 466
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -871,35 +584,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
-    - Assets/Resources/Effects
+    - Assets/Resources/Models
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 67
   m_LastFolders:
-  - Assets/Resources/Effects
-=======
-    - Assets/Mukai/Scripts/UI/Result/Ranking
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets/Mukai/Scripts/UI/Result/Ranking
->>>>>>> remotes/origin/Mukai2
-  m_LastFoldersGridSize: -1
+  - Assets/Resources/Models
+  m_LastFoldersGridSize: 67
   m_LastProjectPath: C:\Users\Midorikawa Ryo\Documents\Unity\firefighters
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 300}
-    m_SelectedIDs: f00b0000
-    m_LastClickedID: 3056
-    m_ExpandedIDs: 000000005c0a00007a0a0000880a0000360b0000020c00006e0c0000820c0000680d0000860d0000a60d0000ae0d0000740e0000a00e0000c00e0000280f0000a40f0000c4100000d21000005c110000661100006a1100006c1100002e120000fe12000078130000061400000814000026150000961500000a1600006c1600006c17000098170000aa180000ec180000ae190000a81a0000ac1a0000fc1a0000341c0000a21c0000a41c00001a1d0000661d00009a4900009c4900009e490000a0490000a2490000a4490000a6490000a8490000aa490000ac490000ae490000b0490000b2490000b4490000b6490000b8490000ba490000bc490000be490000c0490000c2490000c4490000c6490000c8490000ca490000cc490000ce490000d0490000d2490000d4490000d6490000d8490000da490000dc490000de490000e0490000e2490000e4490000e6490000e8490000ea490000ec490000ee490000f0490000f2490000f4490000f6490000f8490000fa490000fc490000fe490000665800006a5800006c5800007058000000ca9a3b
-=======
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 823b0000
-    m_LastClickedID: 15234
-    m_ExpandedIDs: 00000000e42a0000ba2b0000822c0000ee2c0000f42c00002e2e0000ea2e0000162f0000362f00009c2f000010300000323100003e310000c4310000d2310000d431000044320000a4330000c634000034350000a83500000a36000030370000343700002e380000a8380000303900007a3a0000223c0000243c0000e23c0000e43c0000e43e0000e63e0000e83e0000ea3e0000ec3e0000ee3e0000f03e0000f23e0000f43e0000f63e0000f83e0000fa3e0000fc3e0000fe3e0000003f0000023f0000043f0000063f0000083f00000a3f00000c3f00000e3f0000103f0000123f0000143f0000163f0000183f00001a3f00001c3f00001e3f0000203f0000223f0000243f0000263f0000283f00002a3f00002c3f00002e3f0000303f0000323f0000343f0000363f0000383f00003a3f00003c3f00003e3f0000403f0000423f0000443f0000463f0000483f000000ca9a3b
->>>>>>> remotes/origin/Mukai2
+    m_SelectedIDs: b8180000
+    m_LastClickedID: 6328
+    m_ExpandedIDs: 00000000840a00009c0a0000ac0a00005a0b0000260c0000940c0000a80c0000140d0000900d0000d60d0000de0d00006c0e00009a0e0000c00e0000280f0000aa0f0000ec0f0000ce100000dc100000641100006e11000072110000741100003c1200007c1300008e13000090130000241400004815000064150000bc15000034160000781600009a1600009c170000c6170000ca170000b0180000ec1800006e190000ae190000aa1a0000b01a0000fe1a0000041b0000ae1b0000ea1b0000ae1c0000b01c0000241d0000741d0000761d00005e46000060460000624600006446000066460000684600006a4600006c4600006e46000070460000724600007446000076460000784600007a4600007c4600007e46000080460000824600008446000086460000884600008a4600008c4600008e46000090460000924600009446000096460000984600009a4600009c4600009e460000a0460000a2460000a4460000a6460000a8460000aa460000ac460000ae460000b0460000b2460000b4460000b6460000b8460000ba460000bc460000be460000c0460000c2460000c4460000c6460000c8460000ca460000cc460000ce460000d0460000d2460000d4460000d6460000d846000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -915,11 +613,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
-=======
-      m_ClientGUIView: {fileID: 10}
->>>>>>> remotes/origin/Mukai2
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -931,11 +625,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 000000005c0a00007a0a0000880a0000360b0000020c00006e0c0000820c0000680d0000860d0000a60d0000ae0d0000740e0000a00e0000c00e0000280f0000a40f0000c4100000d21000005c110000661100006a1100006c1100002e120000fe12000078130000061400000814000026150000961500000a1600006c1600006c17000098170000aa180000ec180000ae190000a81a0000ac1a0000fc1a0000341c0000a21c0000a41c00001a1d0000661d00009a4900009c4900009e490000a0490000a2490000a4490000a6490000a8490000aa490000ac490000ae490000b0490000b2490000b4490000b6490000b8490000ba490000bc490000be490000c0490000c2490000c4490000c6490000c8490000ca490000cc490000ce490000d0490000d2490000d4490000d6490000d8490000da490000dc490000de490000e0490000e2490000e4490000e6490000e8490000ea490000ec490000ee490000f0490000f2490000f4490000f6490000f8490000fa490000fc490000fe490000665800006a5800006c5800007058000000ca9a3b
-=======
-    m_ExpandedIDs: 00000000e42a0000ba2b0000822c0000ee2c0000f42c00002e2e0000ea2e0000162f0000362f00009c2f000010300000323100003e310000c4310000d2310000d431000044320000fe320000a4330000c634000034350000a83500000a36000030370000343700002e380000a8380000303900007a3a0000223c0000243c0000e23c0000e43c0000e43e0000e63e0000e83e0000ea3e0000ec3e0000ee3e0000f03e0000f23e0000f43e0000f63e0000f83e0000fa3e0000fc3e0000fe3e0000003f0000023f0000043f0000063f0000083f00000a3f00000c3f00000e3f0000103f0000123f0000143f0000163f0000183f00001a3f00001c3f00001e3f0000203f0000223f0000243f0000263f0000283f00002a3f00002c3f00002e3f0000303f0000323f0000343f0000363f0000383f00003a3f00003c3f00003e3f0000403f0000423f0000443f0000463f0000483f000000ca9a3b
->>>>>>> remotes/origin/Mukai2
+    m_ExpandedIDs: 00000000840a00009c0a0000ac0a00005a0b0000260c0000940c0000a80c0000140d0000900d0000d60d0000de0d00006c0e00009a0e0000c00e0000280f0000aa0f0000ec0f0000ce100000dc100000641100006e11000072110000741100003c1200007c1300008e13000090130000241400004815000064150000bc15000034160000781600009a1600009c170000c6170000ca170000b0180000ec1800006e190000ae190000aa1a0000b01a0000fe1a0000041b0000ae1b0000ea1b0000ae1c0000b01c0000241d0000741d0000761d00005e46000060460000624600006446000066460000684600006a4600006c4600006e46000070460000724600007446000076460000784600007a4600007c4600007e46000080460000824600008446000086460000884600008a4600008c4600008e46000090460000924600009446000096460000984600009a4600009c4600009e460000a0460000a2460000a4460000a6460000a8460000aa460000ac460000ae460000b0460000b2460000b4460000b6460000b8460000ba460000bc460000be460000c0460000c2460000c4460000c6460000c8460000ca460000cc460000ce460000d0460000d2460000d4460000d6460000d846000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -963,11 +653,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-<<<<<<< HEAD
-    m_ExpandedInstanceIDs: 401400003e130000f410000094130000f610000000110000081100000c110000
-=======
-    m_ExpandedInstanceIDs: ee560000fa33000076350000a4300000
->>>>>>> remotes/origin/Mukai2
+    m_ExpandedInstanceIDs: 8a3200001e40fdff5c3d0000f43900005242000014420000f46000002e4200000000000030110000ec13000012110000661300007e190000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -983,11 +669,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-<<<<<<< HEAD
       m_ClientGUIView: {fileID: 11}
-=======
-      m_ClientGUIView: {fileID: 10}
->>>>>>> remotes/origin/Mukai2
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -995,15 +677,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 72.00012}
-    m_GridSize: 64
-<<<<<<< HEAD
-  m_DirectoriesAreaWidth: 234
+    m_ScrollPosition: {x: 0, y: 76}
+    m_GridSize: 67
+  m_DirectoriesAreaWidth: 205
 --- !u!114 &19
-=======
-  m_DirectoriesAreaWidth: 287
---- !u!114 &16
->>>>>>> remotes/origin/Mukai2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1011,134 +688,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
   m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
-=======
-  m_Script: {fileID: 12373, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> remotes/origin/Mukai2
   m_Name: 
   m_EditorClassIdentifier: 
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-<<<<<<< HEAD
     m_Text: Console
     m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
-=======
-    m_Text: Audio Mixer
-    m_Image: {fileID: 5436946869657106676, guid: 0000000000000000d000000000000000,
->>>>>>> remotes/origin/Mukai2
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 632
-    y: 558.4
-    width: 379
-    height: 218
+    x: 920.8
+    y: 579.2
+    width: 337
+    height: 223
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
-=======
-    x: -871
-    y: 92
-    width: 592
-    height: 926
-  m_PersistentViewDataDictionary: {fileID: 0}
-  m_MixersTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 12210
-    m_ExpandedIDs: 12eb343c
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_LayoutStripsOnTop:
-    m_VerticalSplitter:
-      ID: 0
-      splitterInitialOffset: 0
-      currentActiveSplitter: -1
-      realSizes: 4100000023000000
-      relativeSizes:
-      - 0.65
-      - 0.35000002
-      minSizes: 5500000069000000
-      maxSizes: 0000000000000000
-      lastTotalSize: 0
-      splitSize: 6
-      xOffset: 0
-    m_HorizontalSplitter:
-      ID: 0
-      splitterInitialOffset: 0
-      currentActiveSplitter: -1
-      realSizes: 3c0000003c0000003c0000003c000000
-      relativeSizes:
-      - 0.25
-      - 0.25
-      - 0.25
-      - 0.25
-      minSizes: 55000000550000005500000055000000
-      maxSizes: 00000000000000000000000000000000
-      lastTotalSize: 0
-      splitSize: 6
-      xOffset: 0
-  m_LayoutStripsOnRight:
-    m_VerticalSplitter:
-      ID: 0
-      splitterInitialOffset: 0
-      currentActiveSplitter: -1
-      realSizes: 3c0000003c0000003c0000003c000000
-      relativeSizes:
-      - 0.25
-      - 0.25
-      - 0.25
-      - 0.25
-      minSizes: 64000000550000005500000055000000
-      maxSizes: 00000000000000000000000000000000
-      lastTotalSize: 0
-      splitSize: 6
-      xOffset: 0
-    m_HorizontalSplitter:
-      ID: 820
-      splitterInitialOffset: 308
-      currentActiveSplitter: -1
-      realSizes: 360100001b010000
-      relativeSizes:
-      - 0.5227656
-      - 0.47723442
-      minSizes: a0000000a0000000
-      maxSizes: 0000000000000000
-      lastTotalSize: 593
-      splitSize: 6
-      xOffset: -1
-  m_SectionOrder: 00000000030000000100000002000000
-  m_LayoutMode: 1
-  m_SortGroupsAlphabetically: 0
-  m_ShowReferencedBuses: 1
-  m_ShowBusConnections: 0
-  m_ShowBusConnectionsOfSelection: 0
---- !u!114 &17
->>>>>>> remotes/origin/Mukai2
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1158,17 +725,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1015.2
-    y: 81.6
-    width: 517
-    height: 695.4
-=======
-    x: -275
-    y: 92
+    x: 1261.6
+    y: 92.8
     width: 275
-    height: 926
->>>>>>> remotes/origin/Mukai2
+    height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 

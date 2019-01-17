@@ -378,6 +378,7 @@
     <None Include="Assets\Midori\Resources\Models\UnityChan\Stage\Shader\AlphaMask.shader" />
     <None Include="Assets\Midori\Resources\Models\UnityChan\license.txt" />
     <None Include="Assets\Mukai\Resources\Fonts\Pixel Font - Tripfive\_README.txt" />
+    <None Include="Assets\Mukai\Resources\Text\Ranking.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
