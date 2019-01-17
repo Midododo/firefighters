@@ -17,7 +17,7 @@ public class MessageController : MonoBehaviour
     [SerializeField]
     private MessageWindow win5;
 
-    public MessageWindow win;   // 表示するやつ
+    private MessageWindow win;   // 表示するやつ
     int num;                    // window番号
 
     // Use this for initialization
@@ -40,26 +40,35 @@ public class MessageController : MonoBehaviour
     // windowを出現させる
     public void ShowWindow()
     {
-        win.flag = true;
-        win.end_flag = false;
+        if (!win.flag)
+        {
+            win.flag = true;
+            win.end_flag = false;
+            // 音鳴らす
+            AudioManager.Instance.PlaySe("Pop1");
+        }
     }
 
     // windowを消す
     public void DeleteWindow()
     {
-        if (num < 5)
+        if (win.flag)
         {
-            win.flag = false;
-            win.end_flag = false;
-            num++;
-            win = SetWindow(num);
+            if (num < 5)
+            {
+                win.flag = false;
+                win.end_flag = false;
+                num++;
+                win = SetWindow(num);
+                AudioManager.Instance.PlaySe("Down1");
+            }
         }
     }
 
     //******************************************************************
     // ・ これ以降は内部処理関数(アクセス拒否)
     //*******************************************************************
-    
+
     // windowの設定
     private MessageWindow SetWindow(int no)
     {

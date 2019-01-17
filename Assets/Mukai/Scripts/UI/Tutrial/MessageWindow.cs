@@ -49,7 +49,7 @@ public class MessageWindow : MonoBehaviour
         {
             PopWindow();
         }
-        else if (!flag)
+        else //if (!flag)
         {
             DeleteWindow();
         }

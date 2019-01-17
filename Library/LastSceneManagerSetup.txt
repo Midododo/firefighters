@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Mukai/Scenes/GameM.unity
+- path: Assets/Mukai/Scenes/TutrialM.unity
   isLoaded: 1
   isActive: 1
