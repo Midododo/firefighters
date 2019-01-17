@@ -6,6 +6,7 @@ public class TutrialUIController : MonoBehaviour
 {
     public GageController Gage;
     public MessageController Window;
+    public WaterTypeController Type;
 
     // Use this for initialization
     void Start ()
@@ -25,5 +26,10 @@ public class TutrialUIController : MonoBehaviour
         {
             Window.DeleteWindow();  // 必ずShowWIndowのとワンセット。先にShowWindow
         }
+
+        //// テスト
+        //if (Input.GetKeyDown(KeyCode.W)) Type.type_right.ChangeWaterType();
+        //if (Input.GetKeyDown(KeyCode.S)) Type.type_left.ChangeWaterType();
+
     }
 }
