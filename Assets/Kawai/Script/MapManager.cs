@@ -63,7 +63,17 @@ public class MapManager : MonoBehaviour
 
     public GameObject prefab_TestObject;
 
-    public GameObject prefab_FireA;
+    public GameObject prefab_Fire01;
+    public GameObject prefab_Fire02;
+    public GameObject prefab_Fire03;
+    public GameObject prefab_Fire04;
+    public GameObject prefab_Fire05;
+    public GameObject prefab_Fire06;
+    public GameObject prefab_Fire07;
+    public GameObject prefab_Fire08;
+    public GameObject prefab_Fire09;
+    public GameObject prefab_Fire10;
+
     public GameObject prefab_FireRing;
 
     public GameObject prefab_AoEEvent;
@@ -195,24 +205,19 @@ public class MapManager : MonoBehaviour
 
         //=======================================
         // look for event data
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        while (line != MapEventStart)
         {
-            while (line != MapEventStart)
-            {
-                line = reader.ReadLine();
-            }
+            line = reader.ReadLine();
+        }
 
-            int[][] EventData = new int[100][];
+        int[][] EventData = new int[100][];
 
-            for (int i = 0; i < (mapSizeArray[1]); i++)
-            {
-                line = reader.ReadLine();
+        for (int i = 0; i < (mapSizeArray[1]); i++)
+        {
+            line = reader.ReadLine();
 
-                var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
-                EventData[i] = numArray;
-            }
-
-            CreateEventMap(EventData);
+            var numArray = line.Split(',').Select(s => int.Parse(s)).ToArray();
+            EventData[i] = numArray;
         }
 
         reader.Close();
@@ -223,6 +228,7 @@ public class MapManager : MonoBehaviour
         CreateFloor();
         CreateWalls(WallData);
         CreateFire(FireData);
+        CreateEventMap(EventData);
 
         int test = 0;
         test++;
@@ -430,7 +436,40 @@ public class MapManager : MonoBehaviour
                     case 0:
                         break;
                     case 1:
-                            m_Fire.Add(Instantiate(prefab_FireA));
+                        int rng = Random.Range(0, 9);
+                        switch (rng)
+                        {
+                            case 0:
+                                m_Fire.Add(Instantiate(prefab_Fire01));
+                                break;
+                            case 1:
+                                m_Fire.Add(Instantiate(prefab_Fire02));
+                                break;
+                            case 2:
+                                m_Fire.Add(Instantiate(prefab_Fire03));
+                                break;
+                            case 3:
+                                m_Fire.Add(Instantiate(prefab_Fire04));
+                                break;
+                            case 4:
+                                m_Fire.Add(Instantiate(prefab_Fire05));
+                                break;
+                            case 5:
+                                m_Fire.Add(Instantiate(prefab_Fire06));
+                                break;
+                            case 6:
+                                m_Fire.Add(Instantiate(prefab_Fire07));
+                                break;
+                            case 7:
+                                m_Fire.Add(Instantiate(prefab_Fire08));
+                                break;
+                            case 8:
+                                m_Fire.Add(Instantiate(prefab_Fire09));
+                                break;
+                            case 9:
+                                m_Fire.Add(Instantiate(prefab_Fire10));
+                                break;
+                        }
                         break;
                 }
                     m_Fire[(m_Fire.Count - 1)].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
