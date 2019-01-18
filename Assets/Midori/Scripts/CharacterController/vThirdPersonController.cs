@@ -12,16 +12,16 @@ namespace Invector.CharacterController
 #endif
         }
 
-        public virtual void Sprint(bool value)
-        {                                   
-            isSprinting = value;            
-        }
+        //public virtual void Sprint(bool value)
+        //{                                   
+        //    isSprinting = value;            
+        //}
 
-        public virtual void Strafe()
-        {
-            if (locomotionType == LocomotionType.OnlyFree) return;
-            isStrafing = !isStrafing;
-        }
+        //public virtual void Strafe()
+        //{
+        //    if (locomotionType == LocomotionType.OnlyFree) return;
+        //    isStrafing = !isStrafing;
+        //}
 
         public virtual void Jump()
         {
@@ -42,6 +42,11 @@ namespace Invector.CharacterController
         public virtual void Splash(bool value)
         {
             isSplashing = value;
+        }
+
+        public virtual void Spread(bool value)
+        {
+            isSpreading = value;
         }
 
         public virtual void RotateWithAnotherTransform(Transform referenceTransform)

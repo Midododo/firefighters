@@ -16,6 +16,7 @@ public class CameraController2 : MonoBehaviour {
     private Vector3 m_MoveVelocity;                 // 緩やかに移動するための参照速度
     private Vector3 m_DesiredPosition;              // カメラが移動する目的位置
 
+    private bool ZoomCamera = false;
 
     private void Awake()
     {
@@ -39,6 +40,14 @@ public class CameraController2 : MonoBehaviour {
 
         // カメラを基本のサイズに変更
         Zoom();
+
+        if (ZoomCamera == true)
+        {
+            Quaternion TempRot = this.transform.rotation;
+            TempRot.x -= 0.005f;
+            TempRot.x = Mathf.Max(TempRot.x, 0.0f);
+            this.transform.rotation = TempRot;
+        }
     }
 
 
@@ -137,5 +146,10 @@ public class CameraController2 : MonoBehaviour {
 
         // カメラの必要サイズを見つけ、設定します
         m_Camera.orthographicSize = FindRequiredSize();
+    }
+
+    public void TutorialZoomCamera()
+    {
+        ZoomCamera = true;
     }
 }

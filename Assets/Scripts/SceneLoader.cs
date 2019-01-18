@@ -21,11 +21,11 @@ public class SceneLoader : MonoBehaviour {
         {
             // Unityバージョン 5.3以降
             //SceneManager.LoadScene("Game");
-            if (SceneManager.GetActiveScene().name == "Title")
-            {
-                FadeScript.SetFadeOutFlag("Tutorial");
-            }
-            else if (SceneManager.GetActiveScene().name == "Tutorial")
+            //if (SceneManager.GetActiveScene().name == "Title")
+            //{
+            //    FadeScript.SetFadeOutFlag("Tutorial");
+            //}
+             if (SceneManager.GetActiveScene().name == "Tutorial")
             {
                 FadeScript.SetFadeOutFlag("Game");
             }
