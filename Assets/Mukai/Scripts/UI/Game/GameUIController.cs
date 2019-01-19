@@ -38,14 +38,22 @@ public class GameUIController : MonoBehaviour
         //    Count.SetCountDown();
         //}
 
-        //// テスト
-        //if (Input.GetKey(KeyCode.UpArrow))
+        //テスト
+        if (Input.GetKey(KeyCode.O))
+        {
+            Gage.gage_right.AddPoint(1);
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            Gage.gage_right.SubPoint(1);
+        }
+        //if (Input.GetKey(KeyCode.U))
         //{
-        //    Gage.gage_right.AddPoint(1);
+        //    Gage.gage_left.AddPoint(1);
         //}
-        //if (Input.GetKey(KeyCode.DownArrow))
+        //if (Input.GetKey(KeyCode.J))
         //{
-        //    Gage.gage_right.SubPoint(1);
+        //    Gage.gage_left.SubPoint(1);
         //}
 
     }

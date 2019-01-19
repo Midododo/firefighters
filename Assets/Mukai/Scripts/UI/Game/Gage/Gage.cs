@@ -16,7 +16,10 @@ public class Gage : MonoBehaviour
                                     // 0 : フレームに変化がないとき
                                     // 1 : ゲージがMAXに切り替わった時の処理
                                     // 2 : ゲージがMAXより下回った時の処理
+
+    private bool se_flag;
     private Image gage;
+    private IEnumerator coroutine;
 
     // Use this for initialization
     void Start()
@@ -27,19 +30,22 @@ public class Gage : MonoBehaviour
         point = 0;
         pre_point = point;
         type = 0;
+
+        coroutine = GageLoopSE();
+        se_flag = false;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            AddPoint(1);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            SubPoint(1);
-        }
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    AddPoint(1);
+        //}
+        //if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    SubPoint(1);
+        //}
 
         if (pre_point < GAGE_MAX && point == GAGE_MAX)
         {// MAXに行ったら
@@ -48,10 +54,6 @@ public class Gage : MonoBehaviour
         }
         else if (pre_point == GAGE_MAX && point < GAGE_MAX) { type = 2; }        // MAXから減ったら
         else { type = 0; }                                                       // 他
-
-        //// 変数領域を判定
-        //if (point > GAGE_MAX) { point = GAGE_MAX; }
-        //else if (point < GAGE_MIN) { point = GAGE_MIN; }
 
         // ゲージに反映
         gage.fillAmount = ConvertPoint(point);
@@ -67,7 +69,7 @@ public class Gage : MonoBehaviour
         return ratio2;
     }
 
-    public int  CheckPoint()
+    public int CheckPoint()
     {
         return type;
     }
@@ -77,8 +79,13 @@ public class Gage : MonoBehaviour
         if (point < GAGE_MAX)
         {
             point += p;
+            if (!se_flag)
+            {
+                StartCoroutine(GageLoopSE());
+            }
         }
     }
+
     public void SubPoint(float p)
     {
         if (point > GAGE_MIN)
@@ -94,7 +101,16 @@ public class Gage : MonoBehaviour
 
     public void SetGaugePoint(float Value)
     {
-        point += Value;
+        //point += Value;
         Debug.Log(point);
     }
+
+    IEnumerator GageLoopSE()
+    {// コルーチン.
+        se_flag = true;
+        AudioManager.Instance.PlaySe("Up3");
+        yield return new WaitForSeconds(0.3f);
+        se_flag = false;
+    }
+
 }
