@@ -28,16 +28,22 @@ public class CountDown2 : MonoBehaviour
         _textCountdown.gameObject.SetActive(true);
 
         _textCountdown.text = "3";
+        AudioManager.Instance.PlaySe("Count1");
         yield return new WaitForSeconds(1.0f);
 
         _textCountdown.text = "2";
+        AudioManager.Instance.PlaySe("Count1");
         yield return new WaitForSeconds(1.0f);
 
         _textCountdown.text = "1";
+        AudioManager.Instance.PlaySe("Count1");
         yield return new WaitForSeconds(1.0f);
 
         _textCountdown.text = "GO!";
-        yield return new WaitForSeconds(0.5f);
+        AudioManager.Instance.PlaySe("Go2");
+        yield return new WaitForSeconds(0.8f);
+
+        AudioManager.Instance.Volume.bgm = 1.0f;        // BGMを通常に戻す
 
         _textCountdown.text = "";
         _textCountdown.gameObject.SetActive(false);

@@ -54,8 +54,6 @@ public class PushLogoController : MonoBehaviour
                 if(!FadeScript.IsFading())
                 {
                     FadeScript.SetFadeOutFlag("Tutorial");
-                    // ここで止めるかチュートリアルで止めるか検討中
-                    //SoundManager.Instance.Stop(AudioKey.TitleBGM);
                 }
             }
         }
@@ -64,8 +62,10 @@ public class PushLogoController : MonoBehaviour
         {        // フェードインが完了したら
             if (!FadeScript.IsFading())
             {
-                //SoundManager.Instance.Play(AudioKey.TitleBGM);
+                AudioManager.Instance.StopBgm();
                 AudioManager.Instance.PlayBgm("Title_BGM");
+                AudioManager.Instance.Volume.bgm = 1.0f;
+
                 this.gameObject.GetComponent<Image>().color = new Color(255.0f, 255.0f, 255.0f, 1.0f);
                 gameObject.GetComponent<AlphaChanger>().enabled = true;
                 fade = !fade;

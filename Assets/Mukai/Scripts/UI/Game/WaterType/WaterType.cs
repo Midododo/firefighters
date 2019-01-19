@@ -31,6 +31,7 @@ public class WaterType : MonoBehaviour
     public void ChangeWaterType()
     {
         type = !type;       // 現在と違うタイプにする
+        AudioManager.Instance.PlaySe("Type1");
         SetWaterTypeTexture();      // テクスチャの変更
     }
 

@@ -17,15 +17,24 @@ public class TutrialUIController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        // テスト
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Window.ShowWindow();    // 第一メッセージから順に表示(DeleteWindowを一回挟むと次のメッセージが出る)
-        }
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Window.DeleteWindow();  // 必ずShowWIndowのとワンセット。先にShowWindow
-        }
+        //// テスト
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Window.ShowWindow();    // 第一メッセージから順に表示(DeleteWindowを一回挟むと次のメッセージが出る)
+        //}
+        //if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    Window.DeleteWindow();  // 必ずShowWIndowのとワンセット。先にShowWindow
+        //}
+
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    Gage.gage_right.AddPoint(1);
+        //}
+        //if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    Gage.gage_right.SubPoint(1);
+        //}
 
         //// テスト
         //if (Input.GetKeyDown(KeyCode.W)) Type.type_right.ChangeWaterType();

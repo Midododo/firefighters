@@ -34,20 +34,24 @@ public class Gage : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            point++;
+            AddPoint(1);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            point--;
+            SubPoint(1);
         }
 
-        if (pre_point < GAGE_MAX && point == GAGE_MAX) { type = 1; }             // MAXに行ったら
+        if (pre_point < GAGE_MAX && point == GAGE_MAX)
+        {// MAXに行ったら
+            type = 1;
+            AudioManager.Instance.PlaySe("Max1");
+        }
         else if (pre_point == GAGE_MAX && point < GAGE_MAX) { type = 2; }        // MAXから減ったら
         else { type = 0; }                                                       // 他
 
-        // 変数領域を判定
-        if (point > GAGE_MAX) { point = GAGE_MAX; }
-        else if (point < GAGE_MIN) { point = GAGE_MIN; }
+        //// 変数領域を判定
+        //if (point > GAGE_MAX) { point = GAGE_MAX; }
+        //else if (point < GAGE_MIN) { point = GAGE_MIN; }
 
         // ゲージに反映
         gage.fillAmount = ConvertPoint(point);
@@ -70,12 +74,19 @@ public class Gage : MonoBehaviour
 
     public void AddPoint(float p)
     {
-        point += p;
+        if (point < GAGE_MAX)
+        {
+            point += p;
+        }
     }
     public void SubPoint(float p)
     {
-        point -= p;
+        if (point > GAGE_MIN)
+        {
+            point -= p;
+        }
     }
+
     public float GetGaugePoint()
     {
         return point;
@@ -87,75 +98,3 @@ public class Gage : MonoBehaviour
         Debug.Log(point);
     }
 }
-
-//   [SerializeField]
-//   private float GAGE_MAX = 100;
-//   [SerializeField]
-//   private float GAGE_MIN = 0;
-
-//   public float point;
-//   float pre_point;
-//   private float ratio;
-//   private Image gage;
-//   int type;
-//   // Use this for initialization
-//   void Start()
-//   {
-//       // 取得
-//       gage = this.gameObject.GetComponent<Image>();
-
-//       point = 0;
-//       ratio = ConvertPoint(point);
-//       pre_point = point;
-//       type = 0;
-//   }
-
-//// Update is called once per frame
-//void Update ()
-//   {
-
-//       if (Input.GetKey(KeyCode.UpArrow))
-//       {
-//           point++;
-//       }
-//       if (Input.GetKey(KeyCode.DownArrow))
-//       {
-//           point--;
-//       }
-
-//       // 前フレームと比較して今回のフレームでMAXに行ったら
-//       if (pre_point < GAGE_MAX && point == GAGE_MAX) { type = 1; }
-//       else if (pre_point == GAGE_MAX && point < GAGE_MAX) { type = 2; }
-//       else { type = 0; }
-//       // 変数領域を判定
-//       if (point > GAGE_MAX) { point = GAGE_MAX; }
-//       else if (point < GAGE_MIN) { point = GAGE_MIN; }
-
-//       // 反映
-//       gage.fillAmount = ConvertPoint(point);
-
-//       pre_point = point;
-//   }
-
-
-//   private float ConvertPoint(float value)
-//   {
-//       ratio = ((float)value / 100.00f);
-//       return ratio;
-//   }
-
-//   public int  CheckPoint()
-//   {
-//       return type;
-//   }
-
-//   public float GetGaugePoint()
-//   {
-//       return point;
-//   }
-
-//   public void SetGaugePoint(float Value)
-//   {
-//       point += Value;
-//       Debug.Log(point);
-//   }
