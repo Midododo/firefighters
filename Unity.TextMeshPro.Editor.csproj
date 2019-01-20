@@ -423,6 +423,9 @@
     <None Include="Assets\Midori\Resources\Models\UnityChan\license.txt" />
     <None Include="Assets\Mukai\Resources\Fonts\Pixel Font - Tripfive\_README.txt" />
     <None Include="Assets\Mukai\Resources\Text\Ranking.txt" />
+    <None Include="Assets\Resources\Text\Human.txt" />
+    <None Include="Assets\Resources\Text\Object.txt" />
+    <None Include="Assets\Resources\Text\ResqueZone.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

@@ -70,9 +70,9 @@ namespace Invector.CharacterController
                 }
                 else
                 {
-                    //particle.Simulate(0.0f, true, true);
+                    particle.Simulate(0.0f, true, true);
 
-                    particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    particle.Stop();
                 }
             }
 

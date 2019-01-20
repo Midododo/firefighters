@@ -7,7 +7,6 @@ public class ParticleController : MonoBehaviour
 
     ParticleSystem m_System;
     ParticleSystem.Particle[] m_Particles;
-    public float m_Drift = 0.01f;
 
     [SerializeField]
     float FireAlphaDecreaseSpeed = 0.001f;
@@ -62,6 +61,14 @@ public class ParticleController : MonoBehaviour
             // αの値を減少
             colorTemp.a -= FireAlphaDecreaseSpeed;
 
+            Smoke_Extinguish SmokeScript;
+            SmokeScript = GameObject.Find("Smoke_Extinguish").GetComponent<Smoke_Extinguish>();
+
+            if (SmokeScript.GetGoSmoke() == 0)
+            {
+                SmokeScript.SetGoSmoke(1);
+            }
+
             if (colorTemp.a < 0.0f)
             {
                 colorTemp.a = 0.0f;
@@ -70,18 +77,20 @@ public class ParticleController : MonoBehaviour
 
                 score.AddScore(ScoreAddNum);
 
+                SmokeScript.SetGoSmoke(2);
+
                 //other.transform.root.gameObject.SetActive(false);
             }
-            else if (colorTemp.a < 0.2f && colorTemp.a > 0)
-            {
-                Smoke_Extinguish SmokeScript;
-                SmokeScript = GameObject.Find("Smoke_Extinguish").GetComponent<Smoke_Extinguish>();
+            //else if (colorTemp.a < 0.2f && colorTemp.a > 0)
+            //{
+            //Smoke_Extinguish SmokeScript;
+            //SmokeScript = GameObject.Find("Smoke_Extinguish").GetComponent<Smoke_Extinguish>();
 
-                if(SmokeScript.GetGoSmoke() == 0)
-                {
-                    SmokeScript.SetGoSmoke(1);
-                }
-            }
+            //if(SmokeScript.GetGoSmoke() == 0)
+            //{
+            //    SmokeScript.SetGoSmoke(1);
+            //}
+            //}
 
             // 反映させる
             ParticleSystem.MinMaxGradient color = new ParticleSystem.MinMaxGradient();

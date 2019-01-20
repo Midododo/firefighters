@@ -8,7 +8,7 @@ public class ResultScore : MonoBehaviour {
     private Text targetText; // <---- 追加2
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         this.targetText = this.GetComponent<Text>(); // <---- 追加3
         this.targetText.text = ScoreController.point.ToString(); // <---- 追加4
     }

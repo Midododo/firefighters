@@ -22,9 +22,9 @@ public class Smoke_Extinguish : MonoBehaviour
         // 火が消え、親は生存中、まだ煙を出していないなら
         if (particle.isStopped && GoSmoke == 1)
         {
-            GoSmoke = 2;
-
-            // 親の（プレイヤーの）位置にパーティクルを表示
+            //GoSmoke = 2;
+            Debug.Log("aa");
+            // 親の（プレイヤーの）位置にパーティクルを表示   
             Vector3 Position = parent.transform.position;
             particle.transform.position = Position;
 

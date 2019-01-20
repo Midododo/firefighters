@@ -62,6 +62,8 @@ public class MapManager : MonoBehaviour
 
 
     public GameObject prefab_TestObject;
+    public GameObject prefab_Human;
+    public GameObject prefab_ResqueZone;
 
     public GameObject prefab_FireA;
     public GameObject prefab_FireRing;
@@ -223,6 +225,9 @@ public class MapManager : MonoBehaviour
         CreateFloor();
         CreateWalls(WallData);
         CreateFire(FireData);
+        CreateFurniture(m_MapSizeX, m_MapSizeZ);
+        CreateHuman(m_MapSizeX, m_MapSizeZ);
+        CreateResqueZone(m_MapSizeX, m_MapSizeZ);
 
         int test = 0;
         test++;
@@ -382,7 +387,7 @@ public class MapManager : MonoBehaviour
     {
         m_Wall = new GameObject[sizeZ][];
 
-        string path = "Assets/Resources/WallTest.txt";
+        string path = "Assets/Resources/Text/Object.txt";
 
         int[][] Data = new int[100][];
 
@@ -402,7 +407,82 @@ public class MapManager : MonoBehaviour
                         m_Wall[z][x] = Instantiate(prefab_TestObject);
                         break;
                 }
-                if (Data[z][x] != 0)
+                if (Data[z][x] == 1)
+                {
+                    //m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
+                    m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
+                }
+
+
+            } // for x
+        } // for z
+
+    } // end function
+
+    //=========================================================================
+    // 人の生成処理
+    void CreateHuman(int sizeX, int sizeZ)
+    {
+        m_Wall = new GameObject[sizeZ][];
+
+        string path = "Assets/Resources/Text/Human.txt";
+
+        int[][] Data = new int[100][];
+
+        m_OpenTextFile.ConvertCSVDataToIntArray(path, Data);
+
+
+        for (int z = 0; z < sizeZ; z++)
+        {
+            m_Wall[z] = new GameObject[sizeX];
+            for (int x = 0; x < sizeX; x++)
+            {
+                switch (Data[z][x])
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        m_Wall[z][x] = Instantiate(prefab_Human);
+                        break;
+                }
+                if (Data[z][x] == 1)
+                {
+                    //m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
+                    m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
+                }
+
+
+            } // for x
+        } // for z
+
+    } // end function
+
+    //=========================================================================
+    // 人の生成処理
+    void CreateResqueZone(int sizeX, int sizeZ)
+    {
+        m_Wall = new GameObject[sizeZ][];
+
+        string path = "Assets/Resources/Text/ResqueZone.txt";
+
+        int[][] Data = new int[100][];
+
+        m_OpenTextFile.ConvertCSVDataToIntArray(path, Data);
+
+        for (int z = 0; z < sizeZ; z++)
+        {
+            m_Wall[z] = new GameObject[sizeX];
+            for (int x = 0; x < sizeX; x++)
+            {
+                switch (Data[z][x])
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        m_Wall[z][x] = Instantiate(prefab_ResqueZone);
+                        break;
+                }
+                if (Data[z][x] == 1)
                 {
                     //m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
                     m_Wall[z][x].transform.position += new Vector3((float)(x * m_MapSectionSize), 0.0f, (float)(z * m_MapSectionSize));
