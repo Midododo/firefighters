@@ -52,6 +52,11 @@ public class ResucueNum : MonoBehaviour
         point++;        // ポイント加算
         rescuetext.text = point.ToString();     // 反映
         SetAnimation();
+        //AudioManager.Instance.Volume.se = 1.0f;        // BGMを通常に戻す
+        AudioManager.Instance.PlaySe("Rescue");
+        //AudioManager.Instance.Volume.se = 1.0f;        // BGMを通常に戻す
+
+
     }
 
 

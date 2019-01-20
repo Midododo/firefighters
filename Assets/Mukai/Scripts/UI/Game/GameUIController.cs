@@ -32,12 +32,29 @@ public class GameUIController : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.S)) Type.type_left.ChangeWaterType();
 
 
-        // テスト
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Count.SetCountDown();
-        }
+        //// テスト
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Count.SetCountDown();
+        //}
 
+        //テスト
+        if (Input.GetKey(KeyCode.O))
+        {
+            Gage.gage_right.AddPoint(1);
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            Gage.gage_right.SubPoint(1);
+        }
+        //if (Input.GetKey(KeyCode.U))
+        //{
+        //    Gage.gage_left.AddPoint(1);
+        //}
+        //if (Input.GetKey(KeyCode.J))
+        //{
+        //    Gage.gage_left.SubPoint(1);
+        //}
 
     }
 }

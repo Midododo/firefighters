@@ -7,7 +7,9 @@ public class ResultSound : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        SoundManager.Instance.Play(AudioKey.ResultBGM);
+        AudioManager.Instance.StopBgm();
+        AudioManager.Instance.PlayBgm("Result_BGM");
+        AudioManager.Instance.Volume.bgm = 0.8f;
 
     }
 

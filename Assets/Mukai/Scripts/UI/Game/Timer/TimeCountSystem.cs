@@ -33,6 +33,8 @@ public class TimeCountSystem : MonoBehaviour
             if (time <= 0)
             {
                 flag = false;
+                AudioManager.Instance.PlaySe("TimeUp1");
+
                 if (FadeScript.IsFading() == false)
                 {
                     FadeScript.SetFadeOutFlag("Result");

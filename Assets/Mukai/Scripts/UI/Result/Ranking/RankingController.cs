@@ -30,9 +30,13 @@ public class RankingController : MonoBehaviour
 
     private int player_rank;
 
+    private IEnumerator coroutine;
+
     // Use this for initialization
     void Start()
     {
+        coroutine = RankInSE();
+
         // Rankinng.txtから情報を引っ張ってくる
         data = FileIO.Read(pass);
 
@@ -117,9 +121,13 @@ public class RankingController : MonoBehaviour
 
     private void CheckSetBlinker(int num)
     {
-        GameObject temp;
+        GameObject temp = null;
 
-        if (num == 0)
+        if (num >= 5)
+        {
+            return;
+        }
+        else if (num == 0)
         {
             temp = GameObject.Find("1stScore");
         }
@@ -139,12 +147,17 @@ public class RankingController : MonoBehaviour
         {
             temp = GameObject.Find("5thScore");
         }
-        else
-        {
-            return;
-        }
+        StartCoroutine(coroutine);
         temp.AddComponent<TextBlinker>();
     }
 
+    IEnumerator RankInSE()
+    {// コルーチン.
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.PlaySe("RankIn");
+        StopCoroutine(coroutine);
+    }
 }
+
+
 
